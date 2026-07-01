@@ -21,6 +21,7 @@ shape = SubResource("CapsuleShape3D_g6cvi")
 
 [node name="PlayerMoveComponent" type="Node" parent="." unique_id=37439615]
 script = ExtResource("1_0ljjw")
+move_speed = 4.0
 
 [node name="Head" type="Node3D" parent="." unique_id=68283594 node_paths=PackedStringArray("camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

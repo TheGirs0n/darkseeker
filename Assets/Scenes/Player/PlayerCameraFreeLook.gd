@@ -2,11 +2,14 @@ extends Node3D
 class_name PlayerCameraFreeLook
 
 @export var camera : Camera3D
-@export var camera_sensivity : float = 0.25
+@export var camera_sensitivity : float = 0.003
+
+var body_to_look : CharacterBody3D = null
 
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	body_to_look = get_parent()
 	
 	
 func _input(event: InputEvent) -> void:
@@ -15,6 +18,6 @@ func _input(event: InputEvent) -> void:
 
 
 func _rotate(x_position : float, y_position : float):
-	rotate_y(deg_to_rad(x_position) * camera_sensivity)
-	camera.rotate_x(deg_to_rad(y_position) * camera_sensivity)
-	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+	body_to_look.rotate_y(x_position * camera_sensitivity)
+	camera.rotate_x(y_position * camera_sensitivity)
+	camera.rotation.x = clamp(camera.rotation.x, -90, 90)
