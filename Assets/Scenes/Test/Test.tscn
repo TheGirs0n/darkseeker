@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bknode375yrc3"]
+[gd_scene format=3 uid="uid://drsv55axwuujx"]
 
-[ext_resource type="PackedScene" uid="uid://dl5aqcpcq7are" path="res://Assets/Scenes/Player/Player.tscn" id="1_n7f0m"]
+[ext_resource type="PackedScene" uid="uid://dkrcrsnqbpuyl" path="res://Assets/Scenes/Player/Player.tscn" id="1_n7f0m"]
 
 [sub_resource type="Sky" id="Sky_75mbb"]
 
