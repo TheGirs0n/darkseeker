@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkrcrsnqbpuyl"]
 
 [ext_resource type="Script" uid="uid://cq2lr8u5tvsbw" path="res://Assets/Scripts/Player/PlayerMoveComponent.gd" id="1_0ljjw"]
-[ext_resource type="Script" uid="uid://bf4f023qj4u5t" path="res://Assets/Scenes/Player/PlayerCameraFreeLook.gd" id="2_na1c3"]
+[ext_resource type="Script" uid="uid://bf4f023qj4u5t" path="res://Assets/Scripts/Player/PlayerCameraFreeLook.gd" id="2_na1c3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_egllq"]
 
@@ -10,7 +10,7 @@ albedo_color = Color(0.47058824, 1, 1, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g6cvi"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1528644025]
+[node name="Player" type="CharacterBody3D" unique_id=1528644025]
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=512565378]
 mesh = SubResource("CapsuleMesh_egllq")
@@ -19,9 +19,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_75mbb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1273721330]
 shape = SubResource("CapsuleShape3D_g6cvi")
 
-[node name="PlayerMoveComponent" type="Node" parent="." unique_id=37439615]
+[node name="PlayerMoveComponent" type="Node" parent="." unique_id=37439615 node_paths=PackedStringArray("head", "collision_shape")]
 script = ExtResource("1_0ljjw")
-move_speed = 4.0
+walk_height = 2.0
+walk_eyes_y_pos = 1.0
+crouch_height = 1.0
+crouch_eyes_y_pos = 0.5
+head = NodePath("../Head")
+collision_shape = NodePath("../CollisionShape3D")
 
 [node name="Head" type="Node3D" parent="." unique_id=68283594 node_paths=PackedStringArray("camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
