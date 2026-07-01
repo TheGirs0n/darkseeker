@@ -20,4 +20,4 @@ func _input(event: InputEvent) -> void:
 func _rotate(x_position : float, y_position : float):
 	body_to_look.rotate_y(x_position * camera_sensitivity)
 	camera.rotate_x(y_position * camera_sensitivity)
-	camera.rotation.x = clamp(camera.rotation.x, -90, 90)
+	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))

@@ -21,11 +21,11 @@ func _physics_process(delta: float) -> void:
 	
 func move():
 	input_direction = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	var s = body_to_move.transform.basis * Vector3(input_direction.x, 0, input_direction.y)
+	var updated_direction = body_to_move.transform.basis * Vector3(input_direction.x, 0, input_direction.y)
 	
 	if input_direction:
-		body_to_move.velocity.x = s.x * move_speed
-		body_to_move.velocity.z = s.y * move_speed
+		body_to_move.velocity.x = updated_direction.x * move_speed
+		body_to_move.velocity.z = updated_direction.z * move_speed
 	else:
 		body_to_move.velocity.x = 0
 		body_to_move.velocity.z = 0
