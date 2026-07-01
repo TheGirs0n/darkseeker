@@ -3,13 +3,13 @@ class_name PlayerMoveComponent
 
 @export_group("Normal State")
 @export var walk_speed : float = 5
-@export var walk_height : float
-@export var walk_eyes_y_pos : float
+@export var walk_height : float = 2
+@export var walk_eyes_y_pos : float = 1
 
 @export_group("Crouch State")
 @export var crouch_speed : float = 3
-@export var crouch_height : float = 3
-@export var crouch_eyes_y_pos : float
+@export var crouch_height : float = 1
+@export var crouch_eyes_y_pos : float = 0.5
 
 @export_group("Shapes")
 @export var head : Node3D
@@ -30,10 +30,9 @@ func _ready() -> void:
 	
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventAction:
-		if Input.is_action_pressed("crouch"):
-			is_crouch = !is_crouch
-			move_speed = crouch_speed if is_crouch else walk_speed
+	if event.is_action_pressed("crouch"):
+		is_crouch = !is_crouch
+		move_speed = crouch_speed if is_crouch else walk_speed
 			
 
 func _physics_process(delta: float) -> void:

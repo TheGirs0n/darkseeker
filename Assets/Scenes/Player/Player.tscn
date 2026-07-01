@@ -21,10 +21,6 @@ shape = SubResource("CapsuleShape3D_g6cvi")
 
 [node name="PlayerMoveComponent" type="Node" parent="." unique_id=37439615 node_paths=PackedStringArray("head", "collision_shape")]
 script = ExtResource("1_0ljjw")
-walk_height = 2.0
-walk_eyes_y_pos = 1.0
-crouch_height = 1.0
-crouch_eyes_y_pos = 0.5
 head = NodePath("../Head")
 collision_shape = NodePath("../CollisionShape3D")
 
