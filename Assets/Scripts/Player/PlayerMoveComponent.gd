@@ -5,11 +5,13 @@ class_name PlayerMoveComponent
 @export var walk_speed : float = 5
 @export var walk_height : float = 2
 @export var walk_eyes_y_pos : float = 1
+@export var walk_shape_y_pos : float = 0
 
 @export_group("Crouch State")
 @export var crouch_speed : float = 3
 @export var crouch_height : float = 1
 @export var crouch_eyes_y_pos : float = 0.5
+@export var crouch_shape_y_pos : float = -0.5
 
 @export_group("Shapes")
 @export var head : Node3D
@@ -58,12 +60,12 @@ func crouch_move():
 	if is_crouch:
 		move_speed = crouch_speed
 		collision_shape.shape.height = crouch_height
-		collision_shape.position.y -= crouch_height / 2
+		collision_shape.position.y = crouch_shape_y_pos
 		head.position.y = crouch_eyes_y_pos
 	else:
 		move_speed = walk_speed
 		collision_shape.shape.height = walk_height
-		collision_shape.position.y += crouch_height / 2
+		collision_shape.position.y = walk_shape_y_pos
 		head.position.y = walk_eyes_y_pos
 		
 	
