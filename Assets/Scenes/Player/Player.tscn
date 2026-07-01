@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dl5aqcpcq7are"]
+
+[ext_resource type="Script" uid="uid://brlchw5wcjpvj" path="res://Assets/Scripts/Player/Player.gd" id="1_0ljjw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_na1c3"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1465555307]
+script = ExtResource("1_0ljjw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1361517399]
+shape = SubResource("BoxShape3D_na1c3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=889120701]
+use_collision = true
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=255901185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Marker3D" unique_id=2007519538]
