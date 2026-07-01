@@ -32,13 +32,12 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("crouch"):
 		is_crouch = !is_crouch
-		move_speed = crouch_speed if is_crouch else walk_speed
-			
+		crouch_move()
+
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
 	normal_move()
-	crouch_move()
 	
 	body_to_move.move_and_slide()
 	
@@ -57,10 +56,14 @@ func normal_move():
 	
 func crouch_move():
 	if is_crouch:
+		move_speed = crouch_speed
 		collision_shape.shape.height = crouch_height
+		collision_shape.position.y -= crouch_height / 2
 		head.position.y = crouch_eyes_y_pos
 	else:
+		move_speed = walk_speed
 		collision_shape.shape.height = walk_height
+		collision_shape.position.y += crouch_height / 2
 		head.position.y = walk_eyes_y_pos
 		
 	
