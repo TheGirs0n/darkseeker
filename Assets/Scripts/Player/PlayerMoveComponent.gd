@@ -1,7 +1,7 @@
 extends Node
 class_name PlayerMoveComponent
 
-@export var move_speed : float = 250
+@export var move_speed : float = 5
 
 const GRAVITY_FORCE : float = 9.8
 var input_direction : Vector2 = Vector2.ZERO
