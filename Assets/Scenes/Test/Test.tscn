@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dkrcrsnqbpuyl" path="res://Assets/Scenes/Player/Player.tscn" id="1_n7f0m"]
 [ext_resource type="Script" uid="uid://bsvmhbpyg8wh3" path="res://Assets/Scripts/Test/test_ball.gd" id="2_egllq"]
+[ext_resource type="Script" uid="uid://bx3ig2gb1t7r8" path="res://Assets/Scripts/Environment/SlidingDoor.gd" id="3_75mbb"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g6cvi"]
 size = Vector2(20, 20)
@@ -21,6 +22,12 @@ size = Vector3(5, 0.5, 5)
 [sub_resource type="SphereMesh" id="SphereMesh_n7f0m"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_egllq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_egllq"]
+size = Vector3(1, 2.195, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_75mbb"]
+size = Vector3(1, 2.195, 1)
 
 [node name="Test" type="Node3D" unique_id=1409122306]
 
@@ -61,3 +68,14 @@ mesh = SubResource("SphereMesh_n7f0m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestBall" unique_id=1706965124]
 shape = SubResource("SphereShape3D_egllq")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=1853553580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4607375, -4.1484623)
+script = ExtResource("3_75mbb")
+target_offset = Vector3(0, 0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=696040452]
+mesh = SubResource("BoxMesh_egllq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1694713019]
+shape = SubResource("BoxShape3D_75mbb")
