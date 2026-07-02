@@ -3,8 +3,8 @@ class_name SlidingDoor
 
 @export_group("Sliding Door Parameters")
 @export var target_offset : Vector3 
+@export var is_open : bool = false
 
-var is_open : bool = false
 var slide_tween : Tween
 var start_position : Vector3
 var end_position : Vector3
@@ -15,8 +15,8 @@ func _ready() -> void:
 
 
 func interact():
-	change_door_position(is_open)
 	is_open = !is_open
+	change_door_position(is_open)
 	
 
 func change_door_position(is_open : bool):

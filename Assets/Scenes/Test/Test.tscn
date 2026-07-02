@@ -73,6 +73,7 @@ shape = SubResource("SphereShape3D_egllq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4607375, -4.1484623)
 script = ExtResource("3_75mbb")
 target_offset = Vector3(0, 0.5, 0)
+is_open = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D" unique_id=696040452]
 mesh = SubResource("BoxMesh_egllq")
