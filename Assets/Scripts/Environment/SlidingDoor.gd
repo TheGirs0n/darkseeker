@@ -15,24 +15,17 @@ func _ready() -> void:
 
 
 func interact():
-	is_open = !is_open
 	change_door_position(is_open)
+	is_open = !is_open
 	
 
 func change_door_position(is_open : bool):
-	if is_open:
-		if slide_tween:
-			slide_tween.kill()
-			
-		slide_tween = create_tween()
-		slide_tween.set_ease(Tween.EASE_IN_OUT)
-		slide_tween.set_trans(Tween.TRANS_LINEAR)
-		slide_tween.tween_property(self, "position", start_position, 0.5)
-	else:
-		if slide_tween:
-			slide_tween.kill()
-			
-		slide_tween = create_tween()
-		slide_tween.set_ease(Tween.EASE_IN_OUT)
-		slide_tween.set_trans(Tween.TRANS_LINEAR)
-		slide_tween.tween_property(self, "position", end_position, 0.5)
+	var target = start_position if is_open == true else end_position
+
+	if slide_tween:
+		slide_tween.kill()
+		
+	slide_tween = create_tween()
+	slide_tween.set_ease(Tween.EASE_IN_OUT)
+	slide_tween.set_trans(Tween.TRANS_CUBIC)
+	slide_tween.tween_property(self, "global_position", target, 0.5)
