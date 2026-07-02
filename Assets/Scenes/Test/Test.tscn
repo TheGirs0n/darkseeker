@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://drsv55axwuujx"]
 
 [ext_resource type="PackedScene" uid="uid://dkrcrsnqbpuyl" path="res://Assets/Scenes/Player/Player.tscn" id="1_n7f0m"]
+[ext_resource type="Script" uid="uid://bsvmhbpyg8wh3" path="res://Assets/Scripts/Test/test_ball.gd" id="2_egllq"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g6cvi"]
 size = Vector2(20, 20)
@@ -53,6 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="TestBall" type="RigidBody3D" parent="." unique_id=300973226]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 2.954)
+script = ExtResource("2_egllq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestBall" unique_id=2082342700]
 mesh = SubResource("SphereMesh_n7f0m")

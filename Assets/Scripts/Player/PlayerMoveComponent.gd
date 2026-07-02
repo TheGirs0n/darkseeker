@@ -35,7 +35,7 @@ func _ready() -> void:
 	
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("crouch"):
+	if Input.is_action_just_pressed("crouch"):
 		if is_crouch:
 			crouch_raycast.force_raycast_update()
 			if crouch_raycast.is_colliding():
