@@ -10,8 +10,9 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("interact"):
+	if event.is_action_pressed("interact"):
 		interact_raycast.force_raycast_update()
 		if interact_raycast.is_colliding():
-			if interact_raycast.get_collider().has_method("interact"):
-				interact_raycast.get_collider().interact()
+			var interact_item = interact_raycast.get_collider()
+			if interact_item.has_method("interact"):
+				interact_item.interact()
