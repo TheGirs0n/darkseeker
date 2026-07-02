@@ -17,6 +17,9 @@ class_name PlayerMoveComponent
 @export var head : Node3D
 @export var collision_shape : CollisionShape3D
 
+@export_group("Crouch RayCast")
+@export var crouch_raycast : RayCast3D
+
 
 const GRAVITY_FORCE : float = 9.8
 var input_direction : Vector2 = Vector2.ZERO
@@ -33,18 +36,28 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("crouch"):
-		is_crouch = !is_crouch
+		if is_crouch:
+			crouch_raycast.force_raycast_update()
+			if crouch_raycast.is_colliding():
+				print("ray collide with + " + str(crouch_raycast.get_collider()))
+				is_crouch = true
+			else:
+				is_crouch = false
+		else:
+			is_crouch = true
+		
+		print(is_crouch)
 		crouch_move()
 
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
-	normal_move()
+	get_movement()
 	
 	body_to_move.move_and_slide()
 	
 	
-func normal_move():
+func get_movement():
 	input_direction = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var updated_direction = body_to_move.transform.basis * Vector3(input_direction.x, 0, input_direction.y)
 	

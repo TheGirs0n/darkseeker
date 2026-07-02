@@ -19,10 +19,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_75mbb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1273721330]
 shape = SubResource("CapsuleShape3D_g6cvi")
 
-[node name="PlayerMoveComponent" type="Node" parent="." unique_id=37439615 node_paths=PackedStringArray("head", "collision_shape")]
+[node name="PlayerMoveComponent" type="Node" parent="." unique_id=37439615 node_paths=PackedStringArray("head", "collision_shape", "crouch_raycast")]
 script = ExtResource("1_0ljjw")
 head = NodePath("../Head")
 collision_shape = NodePath("../CollisionShape3D")
+crouch_raycast = NodePath("../RayCast3D")
 
 [node name="Head" type="Node3D" parent="." unique_id=68283594 node_paths=PackedStringArray("camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -30,3 +31,7 @@ script = ExtResource("2_na1c3")
 camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=800104770]
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=2032180038]
+target_position = Vector3(0, 2.07, 0)
+debug_shape_custom_color = Color(0.4862745, 0.5137255, 0.5137255, 1)
