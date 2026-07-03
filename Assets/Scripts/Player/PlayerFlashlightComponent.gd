@@ -15,8 +15,8 @@ func _input(event: InputEvent) -> void:
 
 
 func _process(delta: float) -> void:
-	if flashlight.visible:
-		player_charge_component.change_charge(flashlight_charge_per_second * delta)
-		
-	if player_charge_component._current_charge == 0:
+	if player_charge_component.has_charge():
+		player_charge_component.consume_charge(flashlight_charge_per_second * delta)
+
+	if player_charge_component.is_empty():
 		flashlight.visible = false

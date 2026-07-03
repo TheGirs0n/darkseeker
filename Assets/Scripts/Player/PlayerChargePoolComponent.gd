@@ -12,8 +12,17 @@ func _ready() -> void:
 	_current_charge = _max_charge
 
 
-func change_charge(charge_to_change : float):
+func consume_charge(charge_to_change : float):
 	_current_charge = clamp(_current_charge - charge_to_change, 0, _max_charge)
 
 	if _current_charge == 0:
 		print("Charge is 0")
+	charge_changed.emit(_current_charge, _max_charge)
+
+
+func has_charge() -> bool:
+	return _current_charge > 0
+
+
+func is_empty() -> bool:
+	return _current_charge == 0
