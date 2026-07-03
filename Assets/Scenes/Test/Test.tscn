@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dkrcrsnqbpuyl" path="res://Assets/Scenes/Player/Player.tscn" id="1_n7f0m"]
 [ext_resource type="Script" uid="uid://bsvmhbpyg8wh3" path="res://Assets/Scripts/Test/test_ball.gd" id="2_egllq"]
 [ext_resource type="Script" uid="uid://bx3ig2gb1t7r8" path="res://Assets/Scripts/Environment/SlidingDoor.gd" id="3_75mbb"]
+[ext_resource type="PackedScene" uid="uid://b7mshl8dxggar" path="res://Assets/Scenes/Environment/MiniGames/MiniGameTerminal.tscn" id="4_it3md"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g6cvi"]
 size = Vector2(20, 20)
@@ -80,3 +81,6 @@ mesh = SubResource("BoxMesh_egllq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=1694713019]
 shape = SubResource("BoxShape3D_75mbb")
+
+[node name="MiniGamePanel" parent="." unique_id=1797107239 instance=ExtResource("4_it3md")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.0711274, 1.4465349, 0)
