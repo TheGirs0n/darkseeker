@@ -14,13 +14,14 @@ albedo_color = Color(0.47058824, 1, 1, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g6cvi"]
 
-[node name="Player" type="CharacterBody3D" unique_id=1528644025 node_paths=PackedStringArray("player_move_component", "player_interact_component", "player_charge_pool_component", "player_flashlight_component", "player_camera_look")]
+[node name="Player" type="CharacterBody3D" unique_id=1528644025 node_paths=PackedStringArray("player_component_list", "player_move_component", "player_interact_component", "player_charge_pool_component", "player_flashlight_component", "player_camera_look")]
 script = ExtResource("1_tlg0o")
+player_component_list = [NodePath("PlayerMoveComponent"), NodePath("PlayerInteractComponent"), NodePath("PlayerChargePoolComponent"), NodePath("PlayerFlashlightComponent"), NodePath("PlayerCameraFreeLookComponent")]
 player_move_component = NodePath("PlayerMoveComponent")
 player_interact_component = NodePath("PlayerInteractComponent")
 player_charge_pool_component = NodePath("PlayerChargePoolComponent")
 player_flashlight_component = NodePath("PlayerFlashlightComponent")
-player_camera_look = NodePath("Head")
+player_camera_look = NodePath("PlayerCameraFreeLookComponent")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=512565378]
 mesh = SubResource("CapsuleMesh_egllq")
@@ -29,11 +30,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_75mbb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1273721330]
 shape = SubResource("CapsuleShape3D_g6cvi")
 
-[node name="PlayerMoveComponent" type="Node" parent="." unique_id=37439615 node_paths=PackedStringArray("head", "collision_shape", "crouch_raycast")]
+[node name="PlayerMoveComponent" type="Node" parent="." unique_id=37439615 node_paths=PackedStringArray("head", "collision_shape", "crouch_raycast", "body_to_move")]
 script = ExtResource("1_0ljjw")
 head = NodePath("../Head")
 collision_shape = NodePath("../CollisionShape3D")
 crouch_raycast = NodePath("../UpRayCast")
+body_to_move = NodePath("..")
 
 [node name="PlayerInteractComponent" type="Node" parent="." unique_id=1930412701 node_paths=PackedStringArray("interact_raycast", "player")]
 script = ExtResource("3_wp7c0")
@@ -49,10 +51,17 @@ flashlight = NodePath("../Head/Camera3D/SpotLight3D")
 player_charge_component = NodePath("../PlayerChargePoolComponent")
 flashlight_charge_per_second = 5.0
 
-[node name="Head" type="Node3D" parent="." unique_id=68283594 node_paths=PackedStringArray("camera")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="PlayerCameraFreeLookComponent" type="Node" parent="." unique_id=626755415 node_paths=PackedStringArray("body_to_look", "camera")]
 script = ExtResource("2_na1c3")
-camera = NodePath("Camera3D")
+body_to_look = NodePath("..")
+camera = NodePath("../Head/Camera3D")
+
+[node name="UpRayCast" type="RayCast3D" parent="." unique_id=2032180038]
+target_position = Vector3(0, 2.07, 0)
+debug_shape_custom_color = Color(0.4862745, 0.5137255, 0.5137255, 1)
+
+[node name="Head" type="Node3D" parent="." unique_id=68283594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=800104770]
 
@@ -64,7 +73,3 @@ target_position = Vector3(0, 0, -2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.44043756)
 light_color = Color(0.6156863, 0.5647059, 0.4, 1)
 spot_angle = 30.0
-
-[node name="UpRayCast" type="RayCast3D" parent="." unique_id=2032180038]
-target_position = Vector3(0, 2.07, 0)
-debug_shape_custom_color = Color(0.4862745, 0.5137255, 0.5137255, 1)

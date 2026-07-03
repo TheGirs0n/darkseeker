@@ -1,9 +1,10 @@
-extends Node
+extends ComponentTemplate
 class_name PlayerInteractComponent
 
 @export_group("Interact RayCast")
 @export var interact_raycast : RayCast3D
 @export var player : CharacterBody3D
+
 
 func _ready() -> void:
 	interact_raycast.add_exception(player)

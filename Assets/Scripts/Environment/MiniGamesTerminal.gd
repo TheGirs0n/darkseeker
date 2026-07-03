@@ -6,6 +6,7 @@ class_name MiniGamesTerminal
 var active_panel : MiniGamesPanel = null
 var active_interactor : CharacterBody3D = null
 
+
 func interact(interactor : CharacterBody3D):
 	if active_panel == null:
 		var scene = mini_game_panel.instantiate()

@@ -1,15 +1,18 @@
-extends Node3D
+extends ComponentTemplate
 class_name PlayerCameraFreeLook
 
+
+@export_group("Player")
+@export var body_to_look : CharacterBody3D = null
+
+@export_group("Camera Parameters")
 @export var camera : Camera3D
 @export var camera_sensitivity : float = 0.003
 
-var body_to_look : CharacterBody3D = null
 
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	body_to_look = get_parent()
 	
 	
 func _input(event: InputEvent) -> void:

@@ -2,6 +2,7 @@ extends CharacterBody3D
 class_name PlayerOverral
 
 @export_group("Components")
+@export var player_component_list : Array[ComponentTemplate]
 @export var player_move_component : PlayerMoveComponent
 @export var player_interact_component : PlayerInteractComponent
 @export var player_charge_pool_component : PlayerChargePoolComponent
@@ -10,10 +11,14 @@ class_name PlayerOverral
 
 
 func set_controls_enable():
-	player_move_component.set_physics_process(true)
-	player_camera_look.set_process_input(true)
+	for i in player_component_list:
+		i.set_process_enable()
+	#player_move_component.set_physics_process(true)
+	#player_camera_look.set_process_input(true)
 
 
 func set_controls_disable():
-	player_move_component.set_physics_process(false)
-	player_camera_look.set_process_input(false)
+	for i in player_component_list:
+		i.set_process_disable()
+	#player_move_component.set_physics_process(false)
+	#player_camera_look.set_process_input(false)

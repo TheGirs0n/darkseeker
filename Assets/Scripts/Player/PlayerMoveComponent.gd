@@ -1,4 +1,4 @@
-extends Node
+extends ComponentTemplate
 class_name PlayerMoveComponent
 
 @export_group("Normal State")
@@ -20,17 +20,17 @@ class_name PlayerMoveComponent
 @export_group("Crouch RayCast")
 @export var crouch_raycast : RayCast3D
 
+@export_group("Player Parameters")
+@export var body_to_move : CharacterBody3D = null
 
 const GRAVITY_FORCE : float = 9.8
 var input_direction : Vector2 = Vector2.ZERO
 
 var move_speed : float = 0
-var body_to_move : CharacterBody3D = null
 
 var is_crouch : bool
 
 func _ready() -> void:
-	body_to_move = get_parent()
 	move_speed = walk_speed
 	
 

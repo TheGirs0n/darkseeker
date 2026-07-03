@@ -1,4 +1,4 @@
-extends Node
+extends ComponentTemplate
 class_name PlayerFlashlightComponent
 
 @export_group("Flashlight")
