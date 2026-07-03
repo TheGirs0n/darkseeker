@@ -11,11 +11,15 @@ class_name PlayerFlashlightComponent
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("flashlight"):
-		flashlight.visible = !flashlight.visible
+		if flashlight.visible:
+			flashlight.visible = false
+		else:
+			if player_charge_component.has_charge():
+				flashlight.visible = true
 
 
 func _process(delta: float) -> void:
-	if player_charge_component.has_charge():
+	if player_charge_component.has_charge() and flashlight.visible:
 		player_charge_component.consume_charge(flashlight_charge_per_second * delta)
 
 	if player_charge_component.is_empty():

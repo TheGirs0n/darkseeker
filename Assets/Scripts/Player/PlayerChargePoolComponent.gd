@@ -17,6 +17,7 @@ func consume_charge(charge_to_change : float):
 
 	if _current_charge == 0:
 		print("Charge is 0")
+		
 	charge_changed.emit(_current_charge, _max_charge)
 
 
