@@ -16,7 +16,6 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		_rotate(-event.relative.x, -event.relative.y)
 	elif event.is_action_pressed("pause"):
-		print("ESC")
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			
 

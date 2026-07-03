@@ -16,10 +16,10 @@ func _ready() -> void:
 
 func interact():
 	is_open = !is_open
-	change_door_position(is_open)
+	change_door_position()
 	
 
-func change_door_position(is_open : bool):
+func change_door_position():
 	var target = start_position if is_open == true else end_position
 
 	if slide_tween:

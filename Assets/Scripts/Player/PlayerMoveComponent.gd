@@ -39,15 +39,13 @@ func _input(event: InputEvent) -> void:
 		if is_crouch:
 			crouch_raycast.force_raycast_update()
 			if crouch_raycast.is_colliding():
-				print("ray collide with + " + str(crouch_raycast.get_collider()))
 				is_crouch = true
 			else:
 				is_crouch = false
 		else:
 			is_crouch = true
-		
-		print(is_crouch)
-		crouch_move()
+
+		set_crouch_move()
 
 
 func _physics_process(delta: float) -> void:
@@ -69,7 +67,7 @@ func get_movement():
 		body_to_move.velocity.z = 0
 	
 	
-func crouch_move():
+func set_crouch_move():
 	if is_crouch:
 		move_speed = crouch_speed
 		collision_shape.shape.height = crouch_height

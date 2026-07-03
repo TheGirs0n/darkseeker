@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cq2lr8u5tvsbw" path="res://Assets/Scripts/Player/PlayerMoveComponent.gd" id="1_0ljjw"]
 [ext_resource type="Script" uid="uid://bf4f023qj4u5t" path="res://Assets/Scripts/Player/PlayerCameraFreeLook.gd" id="2_na1c3"]
+[ext_resource type="Script" uid="uid://c8guftiu38mf" path="res://Assets/Scripts/Player/PlayerChargePoolComponent.gd" id="3_qy8wf"]
 [ext_resource type="Script" uid="uid://c2ag1k4ylatda" path="res://Assets/Scripts/Player/PlayerInteractComponent.gd" id="3_wp7c0"]
+[ext_resource type="Script" uid="uid://dk8qhboap7oga" path="res://Assets/Scripts/Player/PlayerFlashlightComponent.gd" id="4_2xki1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_egllq"]
 
@@ -24,12 +26,21 @@ shape = SubResource("CapsuleShape3D_g6cvi")
 script = ExtResource("1_0ljjw")
 head = NodePath("../Head")
 collision_shape = NodePath("../CollisionShape3D")
-crouch_raycast = NodePath("../RayCast3D")
+crouch_raycast = NodePath("../UpRayCast")
 
 [node name="PlayerInteractComponent" type="Node" parent="." unique_id=1930412701 node_paths=PackedStringArray("interact_raycast", "player")]
 script = ExtResource("3_wp7c0")
-interact_raycast = NodePath("../Head/Camera3D/RayCast3D")
+interact_raycast = NodePath("../Head/Camera3D/CameraRayCast")
 player = NodePath("..")
+
+[node name="PlayerChargePoolComponent" type="Node" parent="." unique_id=1701009731]
+script = ExtResource("3_qy8wf")
+
+[node name="PlayerFlashlightComponent" type="Node" parent="." unique_id=1720432519 node_paths=PackedStringArray("flashlight", "player_charge_component")]
+script = ExtResource("4_2xki1")
+flashlight = NodePath("../Head/Camera3D/SpotLight3D")
+player_charge_component = NodePath("../PlayerChargePoolComponent")
+flashlight_charge_per_second = 5.0
 
 [node name="Head" type="Node3D" parent="." unique_id=68283594 node_paths=PackedStringArray("camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -38,10 +49,15 @@ camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=800104770]
 
-[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=627474096]
+[node name="CameraRayCast" type="RayCast3D" parent="Head/Camera3D" unique_id=627474096]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.515)
 target_position = Vector3(0, 0, -2)
 
-[node name="RayCast3D" type="RayCast3D" parent="." unique_id=2032180038]
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D" unique_id=470562963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.44043756)
+light_color = Color(0.6156863, 0.5647059, 0.4, 1)
+spot_angle = 30.0
+
+[node name="UpRayCast" type="RayCast3D" parent="." unique_id=2032180038]
 target_position = Vector3(0, 2.07, 0)
 debug_shape_custom_color = Color(0.4862745, 0.5137255, 0.5137255, 1)
