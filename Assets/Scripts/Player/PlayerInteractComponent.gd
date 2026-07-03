@@ -12,7 +12,9 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		interact_raycast.force_raycast_update()
+		
 		if interact_raycast.is_colliding():
 			var interact_item = interact_raycast.get_collider()
+			
 			if interact_item.has_method("interact"):
-				interact_item.interact()
+				interact_item.interact(player)

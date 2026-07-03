@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dkrcrsnqbpuyl"]
 
 [ext_resource type="Script" uid="uid://cq2lr8u5tvsbw" path="res://Assets/Scripts/Player/PlayerMoveComponent.gd" id="1_0ljjw"]
+[ext_resource type="Script" uid="uid://d3iyg4mm4q6xm" path="res://Assets/Scripts/Player/PlayerOverral.gd" id="1_tlg0o"]
 [ext_resource type="Script" uid="uid://bf4f023qj4u5t" path="res://Assets/Scripts/Player/PlayerCameraFreeLook.gd" id="2_na1c3"]
 [ext_resource type="Script" uid="uid://c8guftiu38mf" path="res://Assets/Scripts/Player/PlayerChargePoolComponent.gd" id="3_qy8wf"]
 [ext_resource type="Script" uid="uid://c2ag1k4ylatda" path="res://Assets/Scripts/Player/PlayerInteractComponent.gd" id="3_wp7c0"]
@@ -13,7 +14,13 @@ albedo_color = Color(0.47058824, 1, 1, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g6cvi"]
 
-[node name="Player" type="CharacterBody3D" unique_id=1528644025]
+[node name="Player" type="CharacterBody3D" unique_id=1528644025 node_paths=PackedStringArray("player_move_component", "player_interact_component", "player_charge_pool_component", "player_flashlight_component", "player_camera_look")]
+script = ExtResource("1_tlg0o")
+player_move_component = NodePath("PlayerMoveComponent")
+player_interact_component = NodePath("PlayerInteractComponent")
+player_charge_pool_component = NodePath("PlayerChargePoolComponent")
+player_flashlight_component = NodePath("PlayerFlashlightComponent")
+player_camera_look = NodePath("Head")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=512565378]
 mesh = SubResource("CapsuleMesh_egllq")

@@ -6,6 +6,6 @@ class_name SlidingDoubleDoor
 @export var second_sliding_door : SlidingDoor
 
 
-func interact():
-	first_sliding_door.interact()
-	second_sliding_door.interact()
+func interact(interactor : CharacterBody3D):
+	first_sliding_door.interact(interactor)
+	second_sliding_door.interact(interactor)

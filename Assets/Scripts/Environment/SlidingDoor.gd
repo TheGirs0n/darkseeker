@@ -14,7 +14,7 @@ func _ready() -> void:
 	end_position = start_position + target_offset
 
 
-func interact():
+func interact(_interactor : CharacterBody3D):
 	is_open = !is_open
 	change_door_position()
 	
