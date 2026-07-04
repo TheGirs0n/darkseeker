@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bqllgp0xkb085"]
+
+[ext_resource type="Script" uid="uid://ck62nqlu7slqw" path="res://Assets/Scripts/Global/MiniGamesFabric.gd" id="1_jwbm8"]
+
+[node name="MiniGameFabric" type="Node" unique_id=902235122]
+script = ExtResource("1_jwbm8")
