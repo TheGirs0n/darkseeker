@@ -1,19 +1,19 @@
 extends Node
 
 @export_group("Mini Games Wire Configs")
-@export var mini_game_easy_wire_config : MiniGamesWire
-@export var mini_game_medium_wire_config : MiniGamesWire
-@export var mini_game_hard_wire_config : MiniGamesWire
+@export var mini_game_easy_wire_config : MiniGamesWireConfig
+@export var mini_game_medium_wire_config : MiniGamesWireConfig
+@export var mini_game_hard_wire_config : MiniGamesWireConfig
 
 @export_group("Mini Games Image Configs")
-@export var mini_game_easy_image_config : MiniGamesWire
-@export var mini_game_medium_image_config : MiniGamesWire
-@export var mini_game_hard_image_config : MiniGamesWire
+@export var mini_game_easy_image_config : MiniGamesImageConfig
+@export var mini_game_medium_image_config : MiniGamesImageConfig
+@export var mini_game_hard_image_config : MiniGamesImageConfig
 
 @export_group("Mini Games Code Configs")
-@export var mini_game_easy_code_config : MiniGamesWire
-@export var mini_game_medium_code_config : MiniGamesWire
-@export var mini_game_hard_code_config : MiniGamesWire
+@export var mini_game_easy_code_config : MiniGamesCodeConfig
+@export var mini_game_medium_code_config : MiniGamesCodeConfig
+@export var mini_game_hard_code_config : MiniGamesCodeConfig
 
 
 func get_random_by_difficulty(difficulty : GlobalEnums.BotDifficulty) -> MiniGamesConfig:

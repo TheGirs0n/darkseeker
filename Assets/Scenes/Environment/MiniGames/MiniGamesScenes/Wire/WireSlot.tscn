@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bui5mxop42f8x"]
+
+[ext_resource type="Script" uid="uid://dlfkw5ko8idr0" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesScene/Wire/WireSlot.gd" id="1_dw5kn"]
+
+[node name="WireSlot" type="TextureButton" unique_id=1478890496]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+script = ExtResource("1_dw5kn")
+
+[connection signal="pressed" from="." to="." method="wire_click"]

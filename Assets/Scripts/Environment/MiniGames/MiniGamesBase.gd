@@ -1,14 +1,17 @@
 extends Control
 class_name MiniGamesBase
 
-signal finished(state : bool)
 
 var _active : bool = false
+var mini_game_difficulty : GlobalEnums.BotDifficulty = GlobalEnums.BotDifficulty.EASY
+
+signal finished(state : bool)
 
 
 func start_mini_game(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 	_active = true
-
+	_setup(interactor, mini_game_config)
+	
 
 func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 	pass

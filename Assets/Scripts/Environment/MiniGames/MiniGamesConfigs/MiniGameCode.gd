@@ -1,2 +1,0 @@
-extends MiniGamesConfig
-class_name MiniGamesCode
