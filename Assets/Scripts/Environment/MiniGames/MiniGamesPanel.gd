@@ -1,8 +1,5 @@
-extends CanvasLayer
+extends MiniGamesBase
 class_name MiniGamesPanel
-
-
-signal finished(state : bool)
 
 
 func win_button() -> void:

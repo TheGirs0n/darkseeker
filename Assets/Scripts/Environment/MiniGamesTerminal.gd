@@ -9,10 +9,12 @@ var active_interactor : CharacterBody3D = null
 
 func interact(interactor : CharacterBody3D):
 	if active_panel == null:
+		var layer = CanvasLayer.new()
 		var scene = mini_game_panel.instantiate()
 		active_panel = scene
 		active_panel.finished.connect(mini_game_done)
-		get_tree().root.add_child(scene)
+		layer.add_child(scene)
+		get_tree().root.add_child(layer)
 		
 		active_interactor = interactor
 		active_interactor.set_controls_disable()

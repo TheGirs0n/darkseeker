@@ -13,12 +13,8 @@ class_name PlayerOverral
 func set_controls_enable():
 	for i in player_component_list:
 		i.set_process_enable()
-	#player_move_component.set_physics_process(true)
-	#player_camera_look.set_process_input(true)
 
 
 func set_controls_disable():
 	for i in player_component_list:
 		i.set_process_disable()
-	#player_move_component.set_physics_process(false)
-	#player_camera_look.set_process_input(false)
