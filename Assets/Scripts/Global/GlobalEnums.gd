@@ -1,7 +1,7 @@
 extends Node
 
 enum BotDifficulty{
-	EASY = 1,
+	EASY = 0,
 	MEDIUM,
 	HARD
 }
