@@ -3,10 +3,10 @@ class_name MiniGamesPanel
 
 
 func win_button() -> void:
-	finished.emit(true)
+	_win()
 	queue_free()
 
 
 func lose_button() -> void:
-	finished.emit(false)
+	_lose()
 	queue_free()

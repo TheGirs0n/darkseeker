@@ -1,0 +1,2 @@
+extends MiniGamesConfig
+class_name MiniGamesWire

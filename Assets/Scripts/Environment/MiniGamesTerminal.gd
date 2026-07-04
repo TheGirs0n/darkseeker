@@ -11,8 +11,11 @@ func interact(interactor : CharacterBody3D):
 	if active_panel == null:
 		var layer = CanvasLayer.new()
 		var scene = mini_game_panel.instantiate()
+		
 		active_panel = scene
 		active_panel.finished.connect(mini_game_done)
+		active_panel.start_mini_game(interactor, MiniGamesFabric.get_random_by_difficulty(GlobalEnums.BotDifficulty.EASY))
+		
 		layer.add_child(scene)
 		get_tree().root.add_child(layer)
 		
