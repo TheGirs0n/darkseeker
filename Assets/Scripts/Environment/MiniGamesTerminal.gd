@@ -16,7 +16,7 @@ func interact(interactor : CharacterBody3D):
 		
 		active_mini_game = mini_game_scene
 		active_mini_game.finished.connect(mini_game_done)
-		active_mini_game.start_mini_game(interactor, MiniGamesFabric.get_random_by_difficulty(GlobalEnums.BotDifficulty.EASY))
+		active_mini_game.start_mini_game(interactor, MiniGamesFabric.get_random_by_difficulty(terminal_mini_game_settings))
 		
 		active_canvas_layer = layer
 		layer.add_child(mini_game_scene)

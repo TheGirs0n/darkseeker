@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://0n0i45idtsv5"]
 
 [ext_resource type="Script" uid="uid://b4cowqyk2hr4m" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesScene/Wire/MiniGameWire.gd" id="1_sapx4"]
+[ext_resource type="PackedScene" uid="uid://bui5mxop42f8x" path="res://Assets/Scenes/Environment/MiniGames/MiniGamesScenes/Wire/WireSlot.tscn" id="2_ccq2r"]
 
-[node name="MiniGameWire" type="Control" unique_id=433390828]
+[node name="MiniGameWire" type="Control" unique_id=433390828 node_paths=PackedStringArray("first_container", "second_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +11,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sapx4")
+wire_slot_scene = ExtResource("2_ccq2r")
+first_container = NodePath("MarginContainer/VBoxContainer/HBoxContainer")
+second_container = NodePath("MarginContainer/VBoxContainer/HBoxContainer2")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=934942117]
 layout_mode = 1

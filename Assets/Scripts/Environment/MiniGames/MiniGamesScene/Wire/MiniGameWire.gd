@@ -26,8 +26,8 @@ func wire_check(wire_slot : WireSlot):
 
 
 func _win():
-	pass
-	
-	
+	_finish(true)
+
+
 func _lose():
-	pass
+	_finish(false)

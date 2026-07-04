@@ -7,8 +7,8 @@ func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 	
 
 func _win():
-	pass
-	
-	
+	_finish(true)
+
+
 func _lose():
-	pass
+	_finish(false)

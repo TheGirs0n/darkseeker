@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalEnums="*uid://b2hao33k33ohx"
-MiniGamesFabric="*uid://buqc8gu1e2tt"
+MiniGamesFabric="*uid://ck62nqlu7slqw"
 
 [file_customization]
 
