@@ -1,22 +1,25 @@
 extends StaticBody3D
 class_name MiniGamesTerminal
 
-@export var mini_game_panel : PackedScene
+@export_group("Terminal Settings")
+@export var terminal_mini_game_settings : GlobalEnums.BotDifficulty
 
-var active_panel : MiniGamesPanel = null
+var active_mini_game : MiniGamesBase = null
 var active_interactor : CharacterBody3D = null
+var active_canvas_layer : CanvasLayer = null
 
 
 func interact(interactor : CharacterBody3D):
-	if active_panel == null:
+	if active_mini_game == null:
 		var layer = CanvasLayer.new()
-		var scene = mini_game_panel.instantiate()
+		var mini_game_scene = MiniGamesFabric.get_random_by_scene().instantiate()
 		
-		active_panel = scene
-		active_panel.finished.connect(mini_game_done)
-		active_panel.start_mini_game(interactor, MiniGamesFabric.get_random_by_difficulty(GlobalEnums.BotDifficulty.EASY))
+		active_mini_game = mini_game_scene
+		active_mini_game.finished.connect(mini_game_done)
+		active_mini_game.start_mini_game(interactor, MiniGamesFabric.get_random_by_difficulty(GlobalEnums.BotDifficulty.EASY))
 		
-		layer.add_child(scene)
+		active_canvas_layer = layer
+		layer.add_child(mini_game_scene)
 		get_tree().root.add_child(layer)
 		
 		active_interactor = interactor
@@ -26,7 +29,11 @@ func interact(interactor : CharacterBody3D):
 
 
 func mini_game_done(_done : bool):
-	active_panel = null
+	active_mini_game = null
+	
+	active_canvas_layer.queue_free()
+	active_canvas_layer = null
+	
 	active_interactor.set_controls_enable()
 	active_interactor = null
 	

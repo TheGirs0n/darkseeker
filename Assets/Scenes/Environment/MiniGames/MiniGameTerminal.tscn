@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b7mshl8dxggar"]
 
 [ext_resource type="Script" uid="uid://m2bpxlqktfep" path="res://Assets/Scripts/Environment/MiniGamesTerminal.gd" id="1_4gp2i"]
-[ext_resource type="PackedScene" uid="uid://bitdddx88km2a" path="res://Assets/Scenes/Environment/MiniGames/MiniGamesPanel.tscn" id="2_535bb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4gp2i"]
 size = Vector3(1.5, 1.5, 1)
@@ -11,7 +10,7 @@ size = Vector3(1.5, 1.5, 1)
 
 [node name="MiniGameTerminal" type="StaticBody3D" unique_id=1797107239]
 script = ExtResource("1_4gp2i")
-mini_game_panel = ExtResource("2_535bb")
+terminal_mini_game_settings = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=921302215]
 mesh = SubResource("BoxMesh_4gp2i")

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MiniGamesWireConfig" format=3 uid="uid://vtjxt3eql52n"]
+
+[ext_resource type="Script" uid="uid://dwnx2moed7xo6" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesConfigs/MiniGameWireConfig.gd" id="1_2086p"]
+
+[resource]
+script = ExtResource("1_2086p")
+metadata/_custom_type_script = "uid://dwnx2moed7xo6"
