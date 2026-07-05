@@ -4,11 +4,3 @@ class_name MiniGameImage
 
 func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 	pass
-	
-
-func _win():
-	_finish(true)
-
-
-func _lose():
-	_finish(false)

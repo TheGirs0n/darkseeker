@@ -13,7 +13,7 @@ extends Node
 @export var mini_game_code_congifs : Array[MiniGamesCodeConfig]
 
 
-func get_random_minigame_scene() -> MiniGamesBase:
+func get_random_minigame_scene() -> PackedScene:
 	return [mini_game_wire_scene, mini_game_image_scene, mini_game_code_scene].pick_random()
 	
 

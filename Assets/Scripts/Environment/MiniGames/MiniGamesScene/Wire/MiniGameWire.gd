@@ -23,11 +23,3 @@ func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 
 func wire_check(wire_slot : WireSlot):
 	pass
-
-
-func _win():
-	_finish(true)
-
-
-func _lose():
-	_finish(false)

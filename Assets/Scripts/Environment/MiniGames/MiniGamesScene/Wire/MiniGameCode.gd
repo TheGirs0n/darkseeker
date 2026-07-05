@@ -17,14 +17,6 @@ func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 
 
 func set_numbers(code_config : MiniGamesCodeConfig):
-	first_slot.text = code_config.mini_game_code_alphabet[randi_range(0, code_config.mini_game_code_alphabet.length())]
-	second_slot.text = code_config.mini_game_code_alphabet[randi_range(0, code_config.mini_game_code_alphabet.length())]
-	third_slot.text = code_config.mini_game_code_alphabet[randi_range(0, code_config.mini_game_code_alphabet.length())]
-	
-
-func _win():
-	_finish(true)
-
-
-func _lose():
-	_finish(false)
+	first_slot.text = code_config.mini_game_code_alphabet[randi_range(0, code_config.mini_game_code_alphabet.length() - 1)]
+	second_slot.text = code_config.mini_game_code_alphabet[randi_range(0, code_config.mini_game_code_alphabet.length() - 1)]
+	third_slot.text = code_config.mini_game_code_alphabet[randi_range(0, code_config.mini_game_code_alphabet.length() - 1)]
