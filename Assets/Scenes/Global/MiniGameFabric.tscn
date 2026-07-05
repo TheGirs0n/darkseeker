@@ -1,6 +1,27 @@
 [gd_scene format=3 uid="uid://bqllgp0xkb085"]
 
 [ext_resource type="Script" uid="uid://ck62nqlu7slqw" path="res://Assets/Scripts/Global/MiniGamesFabric.gd" id="1_jwbm8"]
+[ext_resource type="PackedScene" uid="uid://0n0i45idtsv5" path="res://Assets/Scenes/Environment/MiniGames/MiniGamesScenes/Wire/MiniGameWire.tscn" id="2_u6ukd"]
+[ext_resource type="PackedScene" uid="uid://hrev8dh7e4mr" path="res://Assets/Scenes/Environment/MiniGames/MiniGamesScenes/Image/MiniGameImage.tscn" id="3_3uqqg"]
+[ext_resource type="Script" uid="uid://dwnx2moed7xo6" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesConfigs/MiniGameWireConfig.gd" id="3_uhtte"]
+[ext_resource type="Resource" uid="uid://cuddi5lj216w1" path="res://Assets/Resources/MiniGamesConfigs/Wire/EasyWireConfig.tres" id="4_4itsu"]
+[ext_resource type="PackedScene" uid="uid://0xo7fsg3k1nf" path="res://Assets/Scenes/Environment/MiniGames/MiniGamesScenes/Code/MiniGameCode.tscn" id="4_kc6in"]
+[ext_resource type="Resource" uid="uid://s6crnuse1ir2" path="res://Assets/Resources/MiniGamesConfigs/Wire/MediumWireConfig.tres" id="5_f6erp"]
+[ext_resource type="Resource" uid="uid://vtjxt3eql52n" path="res://Assets/Resources/MiniGamesConfigs/Wire/HardWireConfig.tres" id="6_lnytv"]
+[ext_resource type="Script" uid="uid://leb1q1aij2ev" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesConfigs/MiniGameImageConfig.gd" id="8_e0tvl"]
+[ext_resource type="Resource" uid="uid://cbc4dd8lj8ijb" path="res://Assets/Resources/MiniGamesConfigs/Image/EasyImageConfig.tres" id="9_s4j7j"]
+[ext_resource type="Resource" uid="uid://c41kwqo1fgygs" path="res://Assets/Resources/MiniGamesConfigs/Image/MediumImageConfig.tres" id="10_aha77"]
+[ext_resource type="Resource" uid="uid://4qxvpm5x060w" path="res://Assets/Resources/MiniGamesConfigs/Image/HardImageConfig.tres" id="11_bh4oc"]
+[ext_resource type="Script" uid="uid://nqxfdk75gixy" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesConfigs/MiniGameCodeConfig.gd" id="13_td8cv"]
+[ext_resource type="Resource" uid="uid://d1ngdr0ht2gyo" path="res://Assets/Resources/MiniGamesConfigs/Code/EasyCodeConfig.tres" id="14_soynx"]
+[ext_resource type="Resource" uid="uid://6f02tsr8publ" path="res://Assets/Resources/MiniGamesConfigs/Code/MediumCodeConfig.tres" id="15_cvfwi"]
+[ext_resource type="Resource" uid="uid://baku8vocjwq43" path="res://Assets/Resources/MiniGamesConfigs/Code/HardCodeConfig.tres" id="16_n643k"]
 
 [node name="MiniGameFabric" type="Node" unique_id=902235122]
 script = ExtResource("1_jwbm8")
+mini_game_wire_scene = ExtResource("2_u6ukd")
+mini_game_wire_congifs = Array[ExtResource("3_uhtte")]([ExtResource("4_4itsu"), ExtResource("5_f6erp"), ExtResource("6_lnytv")])
+mini_game_image_scene = ExtResource("3_3uqqg")
+mini_game_image_congifs = Array[ExtResource("8_e0tvl")]([ExtResource("9_s4j7j"), ExtResource("10_aha77"), ExtResource("11_bh4oc")])
+mini_game_code_scene = ExtResource("4_kc6in")
+mini_game_code_congifs = Array[ExtResource("13_td8cv")]([ExtResource("14_soynx"), ExtResource("15_cvfwi"), ExtResource("16_n643k")])

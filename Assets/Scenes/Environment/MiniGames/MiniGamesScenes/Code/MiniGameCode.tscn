@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://0xo7fsg3k1nf"]
+
+[ext_resource type="Script" uid="uid://dfda38lnyubat" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesScene/Wire/MiniGameCode.gd" id="1_i2w7w"]
+
+[node name="MiniGameCode" type="Control" unique_id=1939178861]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i2w7w")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1027095501]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=348914586]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="FirstSlot" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=925242119]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/FirstSlot" unique_id=1490438025]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SecondSlot" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1210420151]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/SecondSlot" unique_id=305230292]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ThirdSlot" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=2127159685]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ThirdSlot" unique_id=106607984]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
