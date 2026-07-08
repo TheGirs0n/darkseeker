@@ -89,7 +89,7 @@ terminal_mini_game_base = "CODE"
 
 [node name="MiniGamePanel2" parent="." unique_id=664300359 instance=ExtResource("4_it3md")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5, 1.5, 3)
-terminal_mini_game_settings = 0
+terminal_mini_game_settings = 2
 terminal_mini_game_base = "WIRE"
 
 [node name="MiniGamePanel3" parent="." unique_id=86964870 instance=ExtResource("4_it3md")]
