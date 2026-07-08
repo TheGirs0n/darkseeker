@@ -30,6 +30,11 @@ func set_numbers(code_config : MiniGamesCodeConfig):
 	code_alphabet = code_config.mini_game_code_alphabet
 	
 	#code_letters = code_config.mini_game_code_alphabet.
+	var first_letter = code_alphabet[randi_range(0, code_alphabet.length() - 1)]
+	var second_letter = code_alphabet[randi_range(0, code_alphabet.length() - 1)]
+	var third_letter = code_alphabet[randi_range(0, code_alphabet.length() - 1)]
+	
+	var s = first_letter + second_letter + third_letter
 
 
 func _win():
