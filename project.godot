@@ -32,6 +32,10 @@ folder_colors={
 "res://Assets/Translation/": "purple"
 }
 
+[gui]
+
+theme/custom="uid://dqd42opc14hbl"
+
 [input]
 
 move_forward={

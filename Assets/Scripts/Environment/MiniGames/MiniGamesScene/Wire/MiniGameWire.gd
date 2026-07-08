@@ -10,7 +10,7 @@ class_name MiniGameWire
 var selected_wire_slot : WireSlot
 var all_wires : Array[WireSlot]
 
-func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
+func _setup(_interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 	var wire_game_config : MiniGamesWireConfig = mini_game_config
 
 	var sliced_array = wire_slots_color_array.slice(0, wire_game_config.wire_pairs)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hrev8dh7e4mr"]
 
-[ext_resource type="Script" uid="uid://10yxlqs7jsng" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesScene/Wire/MiniGameImage.gd" id="1_5frqs"]
+[ext_resource type="Script" uid="uid://10yxlqs7jsng" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesScene/Image/MiniGameImage.gd" id="1_5frqs"]
 
 [node name="MiniGameImage" type="Control" unique_id=670507752]
 layout_mode = 3
@@ -22,3 +22,48 @@ theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1873669684]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="FirstContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=937689609]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/FirstContainer" unique_id=1312813060]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/FirstContainer/VBoxContainer" unique_id=1800642040]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/FirstContainer/VBoxContainer" unique_id=314433130]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="SecondContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1596085675]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/SecondContainer" unique_id=68809173]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SecondContainer/VBoxContainer" unique_id=1508185398]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SecondContainer/VBoxContainer" unique_id=1490258377]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1

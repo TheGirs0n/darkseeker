@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_8odv3")
+mini_game_image_errors = 4
 metadata/_custom_type_script = "uid://leb1q1aij2ev"

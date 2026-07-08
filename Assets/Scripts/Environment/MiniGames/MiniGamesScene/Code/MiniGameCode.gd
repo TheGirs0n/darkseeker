@@ -21,7 +21,7 @@ func _input(event: InputEvent) -> void:
 				code_current_index = 0
 				
 				
-func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
+func _setup(_interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 	var code_config : MiniGamesCodeConfig = mini_game_config 
 	set_numbers(code_config)
 

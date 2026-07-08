@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://xu3oy6y7ykit"]
+
+[ext_resource type="Script" uid="uid://crue4r456qbp7" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesScene/Image/ImageErrorSlot.gd" id="1_cs3n8"]
+
+[node name="ImageErrorSlot" type="TextureButton" unique_id=1830222832]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+stretch_mode = 5
+script = ExtResource("1_cs3n8")
+
+[connection signal="pressed" from="." to="." method="error_pressed"]

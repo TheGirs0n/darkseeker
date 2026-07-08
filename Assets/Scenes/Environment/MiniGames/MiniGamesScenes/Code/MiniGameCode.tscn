@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0xo7fsg3k1nf"]
 
-[ext_resource type="Script" uid="uid://dfda38lnyubat" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesScene/Wire/MiniGameCode.gd" id="1_i2w7w"]
+[ext_resource type="Script" uid="uid://dfda38lnyubat" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesScene/Code/MiniGameCode.gd" id="1_i2w7w"]
 
 [node name="MiniGameCode" type="Control" unique_id=1939178861 node_paths=PackedStringArray("first_slot", "second_slot", "third_slot")]
 layout_mode = 3
@@ -44,6 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_type_variation = &"CodeLabel"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -60,6 +61,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_type_variation = &"CodeLabel"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -76,5 +78,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_type_variation = &"CodeLabel"
 horizontal_alignment = 1
 vertical_alignment = 1
