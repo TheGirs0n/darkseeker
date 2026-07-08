@@ -12,7 +12,7 @@ var all_wires : Array[WireSlot]
 
 func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 	var wire_game_config : MiniGamesWireConfig = mini_game_config
-	
+
 	var sliced_array = wire_slots_color_array.slice(0, wire_game_config.wire_pairs)
 	
 	var first_color_array = sliced_array
@@ -58,6 +58,7 @@ func wire_check(wire_slot : WireSlot):
 		else:
 			selected_wire_slot.button_pressed = false
 			wire_slot.button_pressed = false
+			
 			selected_wire_slot = null
 
 

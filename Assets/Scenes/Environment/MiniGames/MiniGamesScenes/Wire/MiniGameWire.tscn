@@ -11,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sapx4")
+wire_slots_color_array = Array[Color]([Color(0.5921569, 0.4392157, 0.28235295, 1), Color(0.4392157, 0.58431375, 0.9254902, 1), Color(0.20392157, 0.24705882, 0.3647059, 1)])
 wire_slot_scene = ExtResource("2_ccq2r")
 first_container = NodePath("MarginContainer/VBoxContainer/HBoxContainer")
 second_container = NodePath("MarginContainer/VBoxContainer/HBoxContainer2")

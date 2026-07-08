@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_t1tge")
+wire_pairs = 2
 metadata/_custom_type_script = "uid://dwnx2moed7xo6"
