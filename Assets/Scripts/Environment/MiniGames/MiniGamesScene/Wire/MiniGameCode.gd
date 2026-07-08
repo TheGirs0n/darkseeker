@@ -11,8 +11,8 @@ var code_letters : String
 var code_current_index : int = 0
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.is_pressed():
-		var symbol = char(event.unicode)
+	if event is InputEventKey and event.is_pressed() and not event.echo:
+		var symbol = char(event.unicode).to_upper()
 		if symbol in code_alphabet:
 			if code_letters[code_current_index] == symbol:
 				code_current_index += 1
@@ -29,16 +29,15 @@ func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 func set_numbers(code_config : MiniGamesCodeConfig):
 	code_alphabet = code_config.mini_game_code_alphabet
 	
-	#code_letters = code_config.mini_game_code_alphabet.
 	var first_letter = code_alphabet[randi_range(0, code_alphabet.length() - 1)]
 	var second_letter = code_alphabet[randi_range(0, code_alphabet.length() - 1)]
 	var third_letter = code_alphabet[randi_range(0, code_alphabet.length() - 1)]
 	
-	var s = first_letter + second_letter + third_letter
+	code_letters = first_letter + second_letter + third_letter
 
 
 func _win():
-	if code_current_index != 2:
+	if code_current_index != code_letters.length():
 		return
 	else:
 		super._win()
