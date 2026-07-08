@@ -12,7 +12,10 @@ var all_wires : Array[WireSlot]
 
 func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 	var wire_game_config : MiniGamesWireConfig = mini_game_config
-	var first_color_array = wire_slots_color_array.duplicate()
+	
+	var sliced_array = wire_slots_color_array.slice(0, wire_game_config.wire_pairs)
+	
+	var first_color_array = sliced_array
 	var second_color_array = first_color_array.duplicate()
 	
 	second_color_array.shuffle()
@@ -70,7 +73,10 @@ func set_line(dot_first : WireSlot, dot_second : WireSlot):
 	var line = Line2D.new()
 	line.width = 6
 	line.default_color = dot_first.modulate
+	
 	var top_center = dot_first.global_position + dot_first.size / 2
 	var bottom_center = dot_second.global_position + dot_second.size / 2
+	
 	line.points = [line.to_local(top_center), line.to_local(bottom_center)]
+	
 	add_child(line)
