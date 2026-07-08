@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_70bxs")
+mini_game_code_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"
 metadata/_custom_type_script = "uid://nqxfdk75gixy"

@@ -35,6 +35,10 @@ func set_numbers(code_config : MiniGamesCodeConfig):
 	
 	code_letters = first_letter + second_letter + third_letter
 
+	first_slot.text = first_letter
+	second_slot.text = second_letter
+	third_slot.text = third_letter
+
 
 func _win():
 	if code_current_index != code_letters.length():
