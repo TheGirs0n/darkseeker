@@ -12,10 +12,10 @@ var all_wires : Array[WireSlot]
 
 func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 	var wire_game_config : MiniGamesWireConfig = mini_game_config
-	var first_color_array = wire_slots_color_array
-	var second_color_array = first_color_array
+	var first_color_array = wire_slots_color_array.duplicate()
+	var second_color_array = first_color_array.duplicate()
 	
-	wire_slots_color_array.shuffle()
+	second_color_array.shuffle()
 	
 	for i in wire_game_config.wire_pairs:
 		var wire_slot = wire_slot_scene.instantiate()
@@ -25,8 +25,6 @@ func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 		wire_slot.wire_slot_click.connect(wire_check)
 		first_container.add_child(wire_slot)
 		all_wires.append(wire_slot)
-		
-	wire_slots_color_array.shuffle()
 	
 	for i in wire_game_config.wire_pairs:
 		var wire_slot = wire_slot_scene.instantiate()
@@ -48,6 +46,8 @@ func wire_check(wire_slot : WireSlot):
 		if selected_wire_slot.modulate == wire_slot.modulate:
 			selected_wire_slot.connect_wire()
 			wire_slot.connect_wire()
+			
+			set_line(selected_wire_slot, wire_slot)
 			
 			selected_wire_slot = null
 			

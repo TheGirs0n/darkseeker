@@ -36,8 +36,10 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 25
+alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1539995991]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 25
+alignment = 1
