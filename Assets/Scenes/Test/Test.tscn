@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bsvmhbpyg8wh3" path="res://Assets/Scripts/Test/test_ball.gd" id="2_egllq"]
 [ext_resource type="Script" uid="uid://bx3ig2gb1t7r8" path="res://Assets/Scripts/Environment/SlidingDoor.gd" id="3_75mbb"]
 [ext_resource type="PackedScene" uid="uid://b7mshl8dxggar" path="res://Assets/Scenes/Environment/MiniGames/MiniGameTerminal.tscn" id="4_it3md"]
+[ext_resource type="PackedScene" uid="uid://8wnqedut56qu" path="res://Assets/Scenes/Robots/RobotPart/RobotPart.tscn" id="5_60ox5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g6cvi"]
 size = Vector2(20, 20)
@@ -96,3 +97,6 @@ terminal_mini_game_base = "WIRE"
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5, 1.447, -0.001)
 terminal_mini_game_settings = 2
 terminal_mini_game_base = "IMAGE"
+
+[node name="RobotPart" parent="." unique_id=2069713925 instance=ExtResource("5_60ox5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4916716, 0.25000048, 7.364168)

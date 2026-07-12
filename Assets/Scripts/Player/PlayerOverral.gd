@@ -11,10 +11,10 @@ class_name PlayerOverral
 
 
 func set_controls_enable():
-	for i in player_component_list:
-		i.set_process_enable()
+	for component in player_component_list:
+		component.set_process_enable()
 
 
 func set_controls_disable():
-	for i in player_component_list:
-		i.set_process_disable()
+	for component in player_component_list:
+		component.set_process_disable()

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalEnums="*uid://b2hao33k33ohx"
 MiniGameFabric="*uid://bqllgp0xkb085"
+GameState="*uid://camjga0okp273"
 
 [file_customization]
 
