@@ -16,8 +16,6 @@ var error_count : int
 var right_count : int
 
 func _setup(_interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
-	var image_array : MiniGamesImageConfig = mini_game_config
-	
 	_setup_errors(mini_game_config)
 	
 

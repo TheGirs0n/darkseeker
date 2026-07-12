@@ -20,7 +20,7 @@ func start_mini_game(interactor : CharacterBody3D, mini_game_config : MiniGamesC
 		
 	
 
-func _setup(interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
+func _setup(_interactor : CharacterBody3D, _mini_game_config : MiniGamesConfig):
 	pass
 	
 
@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 
 
 func apply_time_penalty(seconds : float):
-	mini_game_timer_waittime = seconds
+	mini_game_timer_waittime -= seconds
 
 
 func _win():
