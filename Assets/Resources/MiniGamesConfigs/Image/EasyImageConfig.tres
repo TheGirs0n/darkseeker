@@ -1,8 +1,25 @@
 [gd_resource type="Resource" script_class="MiniGamesImageConfig" format=3 uid="uid://cbc4dd8lj8ijb"]
 
 [ext_resource type="Script" uid="uid://leb1q1aij2ev" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesConfigs/MiniGameImageConfig.gd" id="1_07ooc"]
+[ext_resource type="Texture2D" uid="uid://d0csu0igm50m4" path="res://Assets/Sprites/tile000.png" id="1_qoi0m"]
+[ext_resource type="Texture2D" uid="uid://bwuvmh74115uk" path="res://Assets/Sprites/tile001.png" id="2_q0p4k"]
+[ext_resource type="Texture2D" uid="uid://dwq2fuuekevh7" path="res://Assets/Sprites/tile002.png" id="3_6muvg"]
+[ext_resource type="Texture2D" uid="uid://djuclrf6m8di0" path="res://Assets/Sprites/tile003.png" id="4_7pq1r"]
+[ext_resource type="Texture2D" uid="uid://b8pwhlff4no7r" path="res://Assets/Sprites/tile004.png" id="5_5gjpy"]
+[ext_resource type="Texture2D" uid="uid://bhhrrds2uc1rm" path="res://Assets/Sprites/tile005.png" id="6_vxuo2"]
+[ext_resource type="Texture2D" uid="uid://dy5v4rjge80hr" path="res://Assets/Sprites/tile006.png" id="7_84scy"]
+[ext_resource type="Texture2D" uid="uid://dn2ukb0d3nxlk" path="res://Assets/Sprites/tile007.png" id="8_tksbr"]
+[ext_resource type="Texture2D" uid="uid://cm0cjyn78p5g6" path="res://Assets/Sprites/tile008.png" id="9_q3cti"]
+[ext_resource type="Texture2D" uid="uid://bis3kiexqarui" path="res://Assets/Sprites/tile009.png" id="10_vk4yp"]
+[ext_resource type="Texture2D" uid="uid://rxxd3fb58ae1" path="res://Assets/Sprites/tile010.png" id="11_5ak2a"]
+[ext_resource type="Texture2D" uid="uid://c3a0vsaui5w0t" path="res://Assets/Sprites/tile011.png" id="12_b1n0j"]
+[ext_resource type="Texture2D" uid="uid://dt130vxk53055" path="res://Assets/Sprites/tile012.png" id="13_0ovxk"]
+[ext_resource type="Texture2D" uid="uid://b5cyihqtl433o" path="res://Assets/Sprites/tile013.png" id="14_5vweh"]
+[ext_resource type="Texture2D" uid="uid://bdjqfh4wqhje8" path="res://Assets/Sprites/tile014.png" id="15_xqc2p"]
+[ext_resource type="Texture2D" uid="uid://uctrxv1al4d3" path="res://Assets/Sprites/tile015.png" id="16_uorjr"]
 
 [resource]
 script = ExtResource("1_07ooc")
+mini_game_image_array = Array[CompressedTexture2D]([ExtResource("1_qoi0m"), ExtResource("2_q0p4k"), ExtResource("3_6muvg"), ExtResource("4_7pq1r"), ExtResource("5_5gjpy"), ExtResource("6_vxuo2"), ExtResource("7_84scy"), ExtResource("8_tksbr"), ExtResource("9_q3cti"), ExtResource("10_vk4yp"), ExtResource("11_5ak2a"), ExtResource("12_b1n0j"), ExtResource("13_0ovxk"), ExtResource("14_5vweh"), ExtResource("15_xqc2p"), ExtResource("16_uorjr")])
 mini_game_fail_time = 5.0
 metadata/_custom_type_script = "uid://leb1q1aij2ev"

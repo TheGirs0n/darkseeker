@@ -11,9 +11,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5frqs")
-first_container = NodePath("MarginContainer/VBoxContainer/FirstContainer")
+first_container = NodePath("MarginContainer/VBoxContainer2/HBoxContainer2")
 image_error_slot = ExtResource("2_54epq")
-first_contaier_center_node_container = NodePath("MarginContainer/VBoxContainer/FirstContainer/VBoxContainer/HBoxContainer")
+first_contaier_center_node_container = NodePath("MarginContainer/VBoxContainer2/HBoxContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=661213644]
 layout_mode = 1
@@ -27,27 +27,20 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1873669684]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=1312813060]
 layout_mode = 2
-theme_override_constants/separation = 25
-alignment = 1
-
-[node name="FirstContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=937689609]
-layout_mode = 2
-theme_override_constants/separation = 25
-alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/FirstContainer" unique_id=1312813060]
-layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/FirstContainer/VBoxContainer" unique_id=1800642040]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer2" unique_id=1800642040]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/FirstContainer/VBoxContainer" unique_id=314433130]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer2" unique_id=314433130]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 15
 alignment = 1
