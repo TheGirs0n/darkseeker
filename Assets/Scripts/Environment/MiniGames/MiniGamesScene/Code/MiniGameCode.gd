@@ -19,7 +19,7 @@ func _input(event: InputEvent) -> void:
 				_win()
 			else:
 				code_current_index = 0
-				
+			
 				
 func _setup(_interactor : CharacterBody3D, mini_game_config : MiniGamesConfig):
 	var code_config : MiniGamesCodeConfig = mini_game_config 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://10yxlqs7jsng" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesScene/Image/MiniGameImage.gd" id="1_5frqs"]
 [ext_resource type="PackedScene" uid="uid://xu3oy6y7ykit" path="res://Assets/Scenes/Environment/MiniGames/MiniGamesScenes/Image/ImageErrorSlot.tscn" id="2_54epq"]
 
-[node name="MiniGameImage" type="Control" unique_id=670507752 node_paths=PackedStringArray("first_container", "second_container", "first_contaier_center_node_container", "second_container_center_node_container")]
+[node name="MiniGameImage" type="Control" unique_id=670507752 node_paths=PackedStringArray("first_container", "first_contaier_center_node_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,10 +12,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5frqs")
 first_container = NodePath("MarginContainer/VBoxContainer/FirstContainer")
-second_container = NodePath("MarginContainer/VBoxContainer/SecondContainer")
 image_error_slot = ExtResource("2_54epq")
 first_contaier_center_node_container = NodePath("MarginContainer/VBoxContainer/FirstContainer/VBoxContainer/HBoxContainer")
-second_container_center_node_container = NodePath("MarginContainer/VBoxContainer/SecondContainer/VBoxContainer/HBoxContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=661213644]
 layout_mode = 1
@@ -50,26 +48,6 @@ theme_override_constants/separation = 15
 alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/FirstContainer/VBoxContainer" unique_id=314433130]
-layout_mode = 2
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="SecondContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1596085675]
-layout_mode = 2
-theme_override_constants/separation = 25
-alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/SecondContainer" unique_id=68809173]
-layout_mode = 2
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SecondContainer/VBoxContainer" unique_id=1508185398]
-layout_mode = 2
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SecondContainer/VBoxContainer" unique_id=1490258377]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
