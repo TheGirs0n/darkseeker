@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_2tfod")
 mini_game_code_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+mini_game_fail_time = 5.0
 metadata/_custom_type_script = "uid://nqxfdk75gixy"

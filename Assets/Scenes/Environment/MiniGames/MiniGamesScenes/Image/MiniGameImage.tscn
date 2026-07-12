@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://hrev8dh7e4mr"]
 
 [ext_resource type="Script" uid="uid://10yxlqs7jsng" path="res://Assets/Scripts/Environment/MiniGames/MiniGamesScene/Image/MiniGameImage.gd" id="1_5frqs"]
+[ext_resource type="PackedScene" uid="uid://xu3oy6y7ykit" path="res://Assets/Scenes/Environment/MiniGames/MiniGamesScenes/Image/ImageErrorSlot.tscn" id="2_54epq"]
 
-[node name="MiniGameImage" type="Control" unique_id=670507752]
+[node name="MiniGameImage" type="Control" unique_id=670507752 node_paths=PackedStringArray("first_container", "second_container", "first_contaier_center_node_container", "second_container_center_node_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +11,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5frqs")
+first_container = NodePath("MarginContainer/VBoxContainer/FirstContainer")
+second_container = NodePath("MarginContainer/VBoxContainer/SecondContainer")
+image_error_slot = ExtResource("2_54epq")
+first_contaier_center_node_container = NodePath("MarginContainer/VBoxContainer/FirstContainer/VBoxContainer/HBoxContainer")
+second_container_center_node_container = NodePath("MarginContainer/VBoxContainer/SecondContainer/VBoxContainer/HBoxContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=661213644]
 layout_mode = 1

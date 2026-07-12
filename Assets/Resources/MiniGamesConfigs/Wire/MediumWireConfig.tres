@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_t1tge")
 wire_pairs = 2
+mini_game_fail_time = 5.0
 metadata/_custom_type_script = "uid://dwnx2moed7xo6"
