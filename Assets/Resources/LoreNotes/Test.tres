@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LoreEntryResource" format=3 uid="uid://16bu23jsjymh"]
+
+[ext_resource type="Script" uid="uid://17mqjnjk3k8b" path="res://Assets/Scripts/Environment/LoreEntry/LoreEntryConfig.gd" id="1_oyvpx"]
+
+[resource]
+script = ExtResource("1_oyvpx")
+lore_entry_title = "TEST"
+lore_entry_text = "Some test text"
+metadata/_custom_type_script = "uid://17mqjnjk3k8b"

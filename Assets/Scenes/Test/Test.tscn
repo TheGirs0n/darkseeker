@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://bx3ig2gb1t7r8" path="res://Assets/Scripts/Environment/SlidingDoor.gd" id="3_75mbb"]
 [ext_resource type="PackedScene" uid="uid://b7mshl8dxggar" path="res://Assets/Scenes/Environment/MiniGames/MiniGameTerminal.tscn" id="4_it3md"]
 [ext_resource type="PackedScene" uid="uid://8wnqedut56qu" path="res://Assets/Scenes/Robots/RobotPart/RobotPart.tscn" id="5_60ox5"]
+[ext_resource type="PackedScene" uid="uid://1crvvcjlipuq" path="res://Assets/Scenes/Environment/LoreEntry/LoreEntry.tscn" id="6_kc6t1"]
+[ext_resource type="Resource" uid="uid://16bu23jsjymh" path="res://Assets/Resources/LoreNotes/Test.tres" id="7_63sed"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g6cvi"]
 size = Vector2(20, 20)
@@ -100,3 +102,7 @@ terminal_mini_game_base = "IMAGE"
 
 [node name="RobotPart" parent="." unique_id=2069713925 instance=ExtResource("5_60ox5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4916716, 0.25000048, 7.364168)
+
+[node name="LoreEntry" parent="." unique_id=209243851 instance=ExtResource("6_kc6t1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.358718, 0, 6.390117)
+lore_entry_res = ExtResource("7_63sed")
