@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://h7pniwcybqne"]
+
+[ext_resource type="Script" uid="uid://wc1pkdbp8g62" path="res://Assets/Scripts/Enemy/BlankEnemy.gd" id="1_n02uj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tblhi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvjn6"]
+albedo_color = Color(0.4627451, 0.45490196, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bcves"]
+
+[node name="BlankEnemy" type="StaticBody3D" unique_id=1860112092]
+collision_layer = 2
+script = ExtResource("1_n02uj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1292463576]
+mesh = SubResource("CapsuleMesh_tblhi")
+surface_material_override/0 = SubResource("StandardMaterial3D_fvjn6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=779498911]
+shape = SubResource("BoxShape3D_bcves")

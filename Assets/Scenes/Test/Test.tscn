@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://8wnqedut56qu" path="res://Assets/Scenes/Robots/RobotPart/RobotPart.tscn" id="5_60ox5"]
 [ext_resource type="PackedScene" uid="uid://1crvvcjlipuq" path="res://Assets/Scenes/Environment/LoreEntry/LoreEntry.tscn" id="6_kc6t1"]
 [ext_resource type="Resource" uid="uid://16bu23jsjymh" path="res://Assets/Resources/LoreNotes/Test.tres" id="7_63sed"]
+[ext_resource type="PackedScene" uid="uid://h7pniwcybqne" path="res://Assets/Scenes/Enemy/BlankEnemy.tscn" id="8_pgovw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g6cvi"]
 size = Vector2(20, 20)
@@ -106,3 +107,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4916716, 0.25000048, 7.364
 [node name="LoreEntry" parent="." unique_id=209243851 instance=ExtResource("6_kc6t1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.358718, 0, 6.390117)
 lore_entry_res = ExtResource("7_63sed")
+
+[node name="BlankEnemy" parent="." unique_id=1860112092 instance=ExtResource("8_pgovw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3458655, 1.5620289, 6.371398)

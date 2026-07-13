@@ -14,6 +14,8 @@ albedo_color = Color(0.47058824, 1, 1, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g6cvi"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_tlg0o"]
+
 [node name="Player" type="CharacterBody3D" unique_id=1528644025 node_paths=PackedStringArray("player_component_list", "player_move_component", "player_interact_component", "player_charge_pool_component", "player_flashlight_component", "player_camera_look")]
 script = ExtResource("1_tlg0o")
 player_component_list = [NodePath("PlayerMoveComponent"), NodePath("PlayerInteractComponent"), NodePath("PlayerChargePoolComponent"), NodePath("PlayerFlashlightComponent"), NodePath("PlayerCameraFreeLookComponent")]
@@ -30,12 +32,18 @@ surface_material_override/0 = SubResource("StandardMaterial3D_75mbb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1273721330]
 shape = SubResource("CapsuleShape3D_g6cvi")
 
-[node name="PlayerMoveComponent" type="Node" parent="." unique_id=37439615 node_paths=PackedStringArray("head", "collision_shape", "crouch_raycast", "body_to_move")]
+[node name="PlayerMoveComponent" type="Node" parent="." unique_id=37439615 node_paths=PackedStringArray("head", "height_collision_shape", "noise_area", "noise_collision_shape", "noise_timer", "crouch_raycast", "body_to_move")]
 script = ExtResource("1_0ljjw")
 head = NodePath("../Head")
-collision_shape = NodePath("../CollisionShape3D")
+height_collision_shape = NodePath("../CollisionShape3D")
+noise_area = NodePath("../Area3D")
+noise_collision_shape = NodePath("../Area3D/CollisionShape3D")
+noise_timer = NodePath("Timer")
 crouch_raycast = NodePath("../UpRayCast")
 body_to_move = NodePath("..")
+
+[node name="Timer" type="Timer" parent="PlayerMoveComponent" unique_id=1260825393]
+one_shot = true
 
 [node name="PlayerInteractComponent" type="Node" parent="." unique_id=1930412701 node_paths=PackedStringArray("interact_raycast", "player")]
 script = ExtResource("3_wp7c0")
@@ -73,3 +81,10 @@ target_position = Vector3(0, 0, -2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.44043756)
 light_color = Color(0.6156863, 0.5647059, 0.4, 1)
 spot_angle = 30.0
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1937654876]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=958823931]
+shape = SubResource("SphereShape3D_tlg0o")

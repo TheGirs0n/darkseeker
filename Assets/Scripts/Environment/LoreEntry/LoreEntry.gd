@@ -6,12 +6,12 @@ class_name LoreEntry
 var active_interactor : CharacterBody3D
 var lore_entry_panel : PackedScene = preload("res://Assets/Scenes/Environment/LoreEntry/LoreEntryText.tscn")
 
-var is_acive : bool = false
+var is_active : bool = false
 
 
 func interact(interactor : CharacterBody3D):
-	if is_acive == false:
-		is_acive = true
+	if is_active == false:
+		is_active = true
 		
 		var lore_entry_panel_scene = lore_entry_panel.instantiate() as LoreEntryText
 		lore_entry_panel_scene.set_text(lore_entry_res.lore_entry_text)
@@ -27,7 +27,7 @@ func interact(interactor : CharacterBody3D):
 
 
 func close_note():
-	is_acive = false
+	is_active = false
 	
 	active_interactor.set_controls_enable()
 	active_interactor = null
