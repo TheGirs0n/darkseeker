@@ -41,6 +41,7 @@ var is_crouch : bool
 func _ready() -> void:
 	move_speed = walk_speed
 	noise_timer.wait_time = noise_waittime
+	noise_collision_shape.shape.radius = walk_noise_radius
 	
 
 func _input(event: InputEvent) -> void:
@@ -94,7 +95,7 @@ func set_crouch_move():
 		height_collision_shape.shape.height = walk_height
 		height_collision_shape.position.y = walk_shape_y_pos
 		head.position.y = walk_eyes_y_pos
-		noise_collision_shape.shape.radius = crouch_noise_radius
+		noise_collision_shape.shape.radius = walk_noise_radius
 		
 	
 func apply_gravity(delta : float):
