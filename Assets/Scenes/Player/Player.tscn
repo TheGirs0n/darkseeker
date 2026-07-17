@@ -17,6 +17,7 @@ albedo_color = Color(0.47058824, 1, 1, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_tlg0o"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1528644025 node_paths=PackedStringArray("player_component_list", "player_move_component", "player_interact_component", "player_charge_pool_component", "player_flashlight_component", "player_camera_look")]
+collision_mask = 6
 script = ExtResource("1_tlg0o")
 player_component_list = [NodePath("PlayerMoveComponent"), NodePath("PlayerInteractComponent"), NodePath("PlayerChargePoolComponent"), NodePath("PlayerFlashlightComponent"), NodePath("PlayerCameraFreeLookComponent")]
 player_move_component = NodePath("PlayerMoveComponent")
@@ -66,6 +67,7 @@ camera = NodePath("../Head/Camera3D")
 
 [node name="UpRayCast" type="RayCast3D" parent="." unique_id=2032180038]
 target_position = Vector3(0, 2.07, 0)
+collision_mask = 6
 debug_shape_custom_color = Color(0.4862745, 0.5137255, 0.5137255, 1)
 
 [node name="Head" type="Node3D" parent="." unique_id=68283594]
@@ -76,6 +78,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="CameraRayCast" type="RayCast3D" parent="Head/Camera3D" unique_id=627474096]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.515)
 target_position = Vector3(0, 0, -2)
+collision_mask = 6
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D" unique_id=470562963]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.44043756)

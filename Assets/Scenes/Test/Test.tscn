@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://8wnqedut56qu" path="res://Assets/Scenes/Robots/RobotPart/RobotPart.tscn" id="5_60ox5"]
 [ext_resource type="PackedScene" uid="uid://1crvvcjlipuq" path="res://Assets/Scenes/Environment/LoreEntry/LoreEntry.tscn" id="6_kc6t1"]
 [ext_resource type="Resource" uid="uid://16bu23jsjymh" path="res://Assets/Resources/LoreNotes/Test.tres" id="7_63sed"]
-[ext_resource type="PackedScene" uid="uid://h7pniwcybqne" path="res://Assets/Scenes/Enemy/BlankEnemy.tscn" id="8_pgovw"]
+[ext_resource type="PackedScene" uid="uid://ri7daa6qdk7y" path="res://Assets/Scenes/Enemy/Enemy.tscn" id="8_pgovw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g6cvi"]
 size = Vector2(20, 20)
@@ -41,6 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.70710
 shadow_enabled = true
 
 [node name="AAA" type="StaticBody3D" parent="." unique_id=1160238285]
+collision_layer = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AAA" unique_id=277812687]
 mesh = SubResource("PlaneMesh_g6cvi")
@@ -52,6 +53,7 @@ shape = SubResource("BoxShape3D_g6cvi")
 
 [node name="asdsa" type="StaticBody3D" parent="." unique_id=612963609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.005, 2.25, 0)
+collision_layer = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="asdsa" unique_id=437396068]
 mesh = SubResource("PlaneMesh_n7f0m")
@@ -66,6 +68,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="TestBall" type="RigidBody3D" parent="." unique_id=300973226]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 2.954)
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("2_egllq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestBall" unique_id=2082342700]
@@ -76,6 +80,7 @@ shape = SubResource("SphereShape3D_egllq")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=1853553580]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4607375, -4.1484623)
+collision_layer = 4
 script = ExtResource("3_75mbb")
 target_offset = Vector3(0, 0.5, 0)
 is_open = true
@@ -108,5 +113,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4916716, 0.25000048, 7.364
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.358718, 0, 6.390117)
 lore_entry_res = ExtResource("7_63sed")
 
-[node name="BlankEnemy" parent="." unique_id=1860112092 instance=ExtResource("8_pgovw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3458655, 1.5620289, 6.371398)
+[node name="Enemy" parent="." unique_id=1860112092 instance=ExtResource("8_pgovw")]
+transform = Transform3D(-0.028724223, 0, 0.9995873, 0, 1, 0, -0.9995873, 0, -0.028724223, 0.15701675, 0.9999995, 7.067956)

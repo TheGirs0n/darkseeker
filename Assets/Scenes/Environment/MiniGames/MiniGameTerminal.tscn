@@ -9,6 +9,8 @@ size = Vector3(1.5, 1.5, 1)
 size = Vector3(1.5, 1.5, 1)
 
 [node name="MiniGameTerminal" type="StaticBody3D" unique_id=1797107239]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("1_4gp2i")
 terminal_mini_game_settings = 1
 
