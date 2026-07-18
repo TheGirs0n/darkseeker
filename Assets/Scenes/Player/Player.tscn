@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c8guftiu38mf" path="res://Assets/Scripts/Player/PlayerChargePoolComponent.gd" id="3_qy8wf"]
 [ext_resource type="Script" uid="uid://c2ag1k4ylatda" path="res://Assets/Scripts/Player/PlayerInteractComponent.gd" id="3_wp7c0"]
 [ext_resource type="Script" uid="uid://dk8qhboap7oga" path="res://Assets/Scripts/Player/PlayerFlashlightComponent.gd" id="4_2xki1"]
+[ext_resource type="Script" uid="uid://lo4l0uobmoyo" path="res://Assets/Scripts/Player/PlayerDetectComponent.gd" id="7_l33h3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_egllq"]
 
@@ -16,15 +17,16 @@ albedo_color = Color(0.47058824, 1, 1, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_tlg0o"]
 
-[node name="Player" type="CharacterBody3D" unique_id=1528644025 node_paths=PackedStringArray("player_component_list", "player_move_component", "player_interact_component", "player_charge_pool_component", "player_flashlight_component", "player_camera_look")]
+[node name="Player" type="CharacterBody3D" unique_id=1528644025 node_paths=PackedStringArray("player_component_list", "player_move_component", "player_interact_component", "player_charge_pool_component", "player_flashlight_component", "player_camera_look", "player_detect_component")]
 collision_mask = 6
 script = ExtResource("1_tlg0o")
-player_component_list = [NodePath("PlayerMoveComponent"), NodePath("PlayerInteractComponent"), NodePath("PlayerChargePoolComponent"), NodePath("PlayerFlashlightComponent"), NodePath("PlayerCameraFreeLookComponent")]
+player_component_list = [NodePath("PlayerMoveComponent"), NodePath("PlayerInteractComponent"), NodePath("PlayerChargePoolComponent"), NodePath("PlayerFlashlightComponent"), NodePath("PlayerCameraFreeLookComponent"), NodePath("PlayerDetectComponent")]
 player_move_component = NodePath("PlayerMoveComponent")
 player_interact_component = NodePath("PlayerInteractComponent")
 player_charge_pool_component = NodePath("PlayerChargePoolComponent")
 player_flashlight_component = NodePath("PlayerFlashlightComponent")
 player_camera_look = NodePath("PlayerCameraFreeLookComponent")
+player_detect_component = NodePath("PlayerDetectComponent")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=512565378]
 mesh = SubResource("CapsuleMesh_egllq")
@@ -91,3 +93,25 @@ monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=958823931]
 shape = SubResource("SphereShape3D_tlg0o")
+
+[node name="PlayerDetectComponent" type="Node" parent="." unique_id=2066703020 node_paths=PackedStringArray("markers")]
+script = ExtResource("7_l33h3")
+markers = [NodePath("Marker3D"), NodePath("Marker3D2"), NodePath("Marker3D3"), NodePath("Marker3D4"), NodePath("Marker3D5")]
+
+[node name="Marker3D" type="Marker3D" parent="PlayerDetectComponent" unique_id=421704302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="PlayerDetectComponent" unique_id=2023040579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, 0)
+
+[node name="Marker3D3" type="Marker3D" parent="PlayerDetectComponent" unique_id=460177869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 0)
+
+[node name="Marker3D4" type="Marker3D" parent="PlayerDetectComponent" unique_id=1068419228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29975945, 0)
+
+[node name="Marker3D6" type="Marker3D" parent="PlayerDetectComponent" unique_id=1958909827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0)
+
+[node name="Marker3D5" type="Marker3D" parent="PlayerDetectComponent" unique_id=1482654339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
