@@ -18,7 +18,7 @@ func hear():
 
 func check_vision() -> void:
 	if vision_area.get_overlapping_bodies().is_empty():
-		return
+		is_player_detected.emit(false)
 	else:
 		var player = vision_area.get_overlapping_bodies()[0] as PlayerOverral
 		var space_state : PhysicsDirectSpaceState3D = get_world_3d().direct_space_state

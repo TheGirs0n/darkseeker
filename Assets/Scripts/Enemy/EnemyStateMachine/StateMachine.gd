@@ -3,11 +3,12 @@ class_name StateMachine
 
 @export_group("States Array")
 @export var states_array : Array[EnemyStateTemplate]
+@export var initial_state : EnemyStateTemplate
 
 var current_state : EnemyStateTemplate
 
 func _ready() -> void:
-	current_state = PatrolState.new()
+	current_state = initial_state
 	current_state.enter_state()
 	
 
