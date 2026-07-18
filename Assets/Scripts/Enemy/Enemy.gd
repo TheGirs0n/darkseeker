@@ -25,3 +25,5 @@ func check_vision() -> void:
 		
 		if player.player_detect_component.is_player_detected(eyes_position, space_state):
 			is_player_detected.emit(true)
+		else:
+			is_player_detected.emit(false)
