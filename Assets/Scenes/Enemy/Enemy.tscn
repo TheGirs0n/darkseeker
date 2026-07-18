@@ -46,13 +46,13 @@ shape = SubResource("ConvexPolygonShape3D_ty30k")
 [node name="EyesMarker" type="Marker3D" parent="." unique_id=544333816]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
 
-[node name="StateMachine" type="Node" parent="." unique_id=1098044964 node_paths=PackedStringArray("states_array", "initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=1098044964 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_kfdwc")
-states_array = [NodePath("ChaseState"), NodePath("PatrolState")]
 initial_state = NodePath("PatrolState")
 
-[node name="ChaseState" type="Node" parent="StateMachine" unique_id=293729258 node_paths=PackedStringArray("current_state_machine")]
+[node name="ChaseState" type="Node" parent="StateMachine" unique_id=293729258 node_paths=PackedStringArray("patrol_state", "current_state_machine")]
 script = ExtResource("3_5j34h")
+patrol_state = NodePath(".")
 current_state_machine = NodePath("..")
 
 [node name="PatrolState" type="Node" parent="StateMachine" unique_id=34782604 node_paths=PackedStringArray("chase_state", "current_state_machine")]
@@ -60,5 +60,6 @@ script = ExtResource("4_danqv")
 chase_state = NodePath("../ChaseState")
 current_state_machine = NodePath("..")
 
+[connection signal="is_player_detected" from="." to="StateMachine/ChaseState" method="_on_enemy_is_player_detected"]
 [connection signal="is_player_detected" from="." to="StateMachine/PatrolState" method="_on_enemy_is_player_detected"]
 [connection signal="timeout" from="VisionArea/Timer" to="." method="check_vision"]

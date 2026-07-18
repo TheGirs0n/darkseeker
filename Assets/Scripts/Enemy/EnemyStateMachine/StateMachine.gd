@@ -2,7 +2,6 @@ extends Node
 class_name StateMachine
 
 @export_group("States Array")
-@export var states_array : Array[EnemyStateTemplate]
 @export var initial_state : EnemyStateTemplate
 
 var current_state : EnemyStateTemplate
