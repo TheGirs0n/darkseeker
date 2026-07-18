@@ -6,7 +6,6 @@ class_name EnemyDetectComponent
 @export var eyes_position : Node3D
 
 @export_group("State Machine")
-@export var enemy_state_machine : StateMachine
 @export var hear_timer : Timer
 
 var seen_player : bool = false

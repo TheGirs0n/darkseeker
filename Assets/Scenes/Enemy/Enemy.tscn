@@ -28,11 +28,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fvjn6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=779498911]
 shape = SubResource("BoxShape3D_bcves")
 
-[node name="EnemyDetectComponent" type="Node3D" parent="." unique_id=1279945926 node_paths=PackedStringArray("vision_area", "eyes_position", "enemy_state_machine", "hear_timer")]
+[node name="EnemyDetectComponent" type="Node3D" parent="." unique_id=1279945926 node_paths=PackedStringArray("vision_area", "eyes_position", "hear_timer")]
 script = ExtResource("4_5j34h")
 vision_area = NodePath("../VisionArea")
 eyes_position = NodePath("../EyesMarker")
-enemy_state_machine = NodePath("../StateMachine")
 hear_timer = NodePath("../HearTimer")
 
 [node name="VisionArea" type="Area3D" parent="." unique_id=1268209519]
@@ -71,4 +70,4 @@ current_state_machine = NodePath("..")
 wait_time = 3.0
 one_shot = true
 
-[connection signal="timeout" from="VisionArea/Timer" to="." method="check_vision"]
+[connection signal="timeout" from="VisionArea/Timer" to="EnemyDetectComponent" method="check_vision"]
