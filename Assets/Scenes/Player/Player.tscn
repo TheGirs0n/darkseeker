@@ -96,22 +96,24 @@ shape = SubResource("SphereShape3D_tlg0o")
 
 [node name="PlayerDetectComponent" type="Node" parent="." unique_id=2066703020 node_paths=PackedStringArray("markers")]
 script = ExtResource("7_l33h3")
-markers = [NodePath("Marker3D"), NodePath("Marker3D2"), NodePath("Marker3D3"), NodePath("Marker3D4"), NodePath("Marker3D5")]
+markers = [NodePath("../Node3D/Marker3D"), NodePath("../Node3D/Marker3D2"), NodePath("../Node3D/Marker3D3"), NodePath("../Node3D/Marker3D4"), NodePath("../Node3D/Marker3D6"), NodePath("../Node3D/Marker3D5")]
 
-[node name="Marker3D" type="Marker3D" parent="PlayerDetectComponent" unique_id=421704302]
+[node name="Node3D" type="Node3D" parent="." unique_id=1406200895]
+
+[node name="Marker3D" type="Marker3D" parent="Node3D" unique_id=421704302]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Marker3D2" type="Marker3D" parent="PlayerDetectComponent" unique_id=2023040579]
+[node name="Marker3D2" type="Marker3D" parent="Node3D" unique_id=2023040579]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, 0)
 
-[node name="Marker3D3" type="Marker3D" parent="PlayerDetectComponent" unique_id=460177869]
+[node name="Marker3D3" type="Marker3D" parent="Node3D" unique_id=460177869]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 0)
 
-[node name="Marker3D4" type="Marker3D" parent="PlayerDetectComponent" unique_id=1068419228]
+[node name="Marker3D4" type="Marker3D" parent="Node3D" unique_id=1068419228]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29975945, 0)
 
-[node name="Marker3D6" type="Marker3D" parent="PlayerDetectComponent" unique_id=1958909827]
+[node name="Marker3D6" type="Marker3D" parent="Node3D" unique_id=1958909827]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0)
 
-[node name="Marker3D5" type="Marker3D" parent="PlayerDetectComponent" unique_id=1482654339]
+[node name="Marker3D5" type="Marker3D" parent="Node3D" unique_id=1482654339]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)

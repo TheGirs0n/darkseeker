@@ -17,6 +17,5 @@ func check_vision() -> void:
 		var player = vision_area.get_overlapping_bodies()[0] as PlayerOverral
 		var space_state : PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 		
-		
 		if player.player_detect_component.is_player_detected(eyes_position, space_state):
 			print("SEEN")

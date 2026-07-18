@@ -34,6 +34,12 @@ size = Vector3(1, 2.195, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_75mbb"]
 size = Vector3(1, 2.195, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_pgovw"]
+size = Vector3(3.115, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pgovw"]
+size = Vector3(3.115, 1, 1)
+
 [node name="Test" type="Node3D" unique_id=1409122306]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=131755295]
@@ -64,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 shape = SubResource("BoxShape3D_egllq")
 
 [node name="CharacterBody3D" parent="." unique_id=1528644025 instance=ExtResource("1_n7f0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0764537, 0)
 
 [node name="TestBall" type="RigidBody3D" parent="." unique_id=300973226]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 2.954)
@@ -115,3 +121,15 @@ lore_entry_res = ExtResource("7_63sed")
 
 [node name="Enemy" parent="." unique_id=1860112092 instance=ExtResource("8_pgovw")]
 transform = Transform3D(-0.028724223, 0, 0.9995873, 0, 1, 0, -0.9995873, 0, -0.028724223, 0.15701675, 0.9999995, 7.067956)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2142976717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7342716, 1.351654, 5.5034485)
+collision_layer = 4
+collision_mask = 6
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1417613235]
+layers = 4
+mesh = SubResource("BoxMesh_pgovw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=535151089]
+shape = SubResource("BoxShape3D_pgovw")
