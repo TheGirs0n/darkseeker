@@ -1,11 +1,13 @@
 extends EnemyStateTemplate
 class_name PatrolState
 
+@export var chase_state : ChaseState
+
 var is_player_detected : bool = false
 
 func update_state(delta : float):
 	if is_player_detected:
-		#current_state_machine.change_state(current_state_machine.states_array.)
+		current_state_machine.change_state(chase_state)
 		pass
 
 

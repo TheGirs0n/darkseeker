@@ -6,6 +6,10 @@ class_name StateMachine
 
 var current_state : EnemyStateTemplate
 
+func _ready() -> void:
+	current_state = PatrolState.new()
+	current_state.enter_state()
+	
 
 func _physics_process(delta: float) -> void:
 	current_state.update_state(delta)

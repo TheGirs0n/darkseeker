@@ -54,8 +54,9 @@ states_array = [NodePath("ChaseState"), NodePath("PatrolState")]
 script = ExtResource("3_5j34h")
 current_state_machine = NodePath("..")
 
-[node name="PatrolState" type="Node" parent="StateMachine" unique_id=34782604 node_paths=PackedStringArray("current_state_machine")]
+[node name="PatrolState" type="Node" parent="StateMachine" unique_id=34782604 node_paths=PackedStringArray("chase_state", "current_state_machine")]
 script = ExtResource("4_danqv")
+chase_state = NodePath("../ChaseState")
 current_state_machine = NodePath("..")
 
 [connection signal="is_player_detected" from="." to="StateMachine/PatrolState" method="_on_enemy_is_player_detected"]
