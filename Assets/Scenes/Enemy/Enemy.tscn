@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://ri7daa6qdk7y"]
 
-[ext_resource type="Script" uid="uid://bu1k7eqfqdhyj" path="res://Assets/Scripts/Enemy/Enemy.gd" id="1_ty30k"]
+[ext_resource type="Script" uid="uid://e7pjkigoc16d" path="res://Assets/Scripts/Enemy/Enemy.gd" id="1_ty30k"]
 [ext_resource type="Script" uid="uid://es3pa65ln6g5" path="res://Assets/Scripts/Enemy/EnemyStateMachine/StateMachine.gd" id="2_kfdwc"]
 [ext_resource type="Script" uid="uid://cnms4ad38whh5" path="res://Assets/Scripts/Enemy/EnemyStateMachine/ChaseState.gd" id="3_5j34h"]
+[ext_resource type="Script" uid="uid://bu1k7eqfqdhyj" path="res://Assets/Scripts/Enemy/EnemyDetectComponent.gd" id="4_5j34h"]
 [ext_resource type="Script" uid="uid://clhnm71yvrc5i" path="res://Assets/Scripts/Enemy/EnemyStateMachine/PatrolState.gd" id="4_danqv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tblhi"]
@@ -15,12 +16,10 @@ albedo_color = Color(0.64278483, 0.5239962, 0.25360575, 1)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ty30k"]
 points = PackedVector3Array(-0.5, -1, 0, -0.49765074, -1, -0.049040705, -0.49765074, -1, 0.048942864, -0.40005875, -0.6000391, 0, -0.2986492, -0.20007831, -0.02946359, -0.4904072, -1, -0.097592026, -0.4904072, -1, 0.097494125, -0.2986492, -0.20007831, 0.029365718, -0.20007831, 0.1998825, 0, 0, 1, 0, -0.47856304, -1, -0.14516446, -0.19146436, 0.1998825, -0.058144093, -0.47856304, -1, 0.14506656, -0.19146436, 0.1998825, 0.05804622, 0.5, -1, 0, 0.29855132, -0.20007831, -0.02946359, 0.4903093, -1, -0.097592026, 0.47846514, -1, -0.14516446, 0.46192247, -1, -0.1913665, 0.44087708, -1, -0.23570868, 0.35268205, -0.6000391, -0.1886257, 0.41572046, -1, -0.27779955, 0.23189116, -0.20007831, -0.19038764, 0.21211827, -0.20007831, -0.21221614, 0.19028974, -0.20007831, -0.23198903, 0.27770162, -1, -0.41581833, 0.18852782, -0.6000391, -0.35277995, 0.19126862, -1, -0.46202037, 0.05804622, 0.1998825, -0.19146436, 0.097494125, -1, -0.4904072, 0.029365718, -0.20007831, -0.2986492, 0, 0.1998825, -0.20007831, -0.02946359, -0.20007831, -0.2986492, -0.097592026, -1, -0.4904072, -0.058144093, 0.1998825, -0.19146436, -0.1913665, -1, -0.46202037, -0.1886257, -0.6000391, -0.35277995, -0.09436178, 0.1998825, -0.17638996, -0.055599064, 0.5998434, -0.08320281, -0.06352779, 0.5998434, -0.077329665, -0.07077134, 0.5998434, -0.07077134, -0.077329665, 0.5998434, -0.06352779, -0.08320281, 0.5998434, -0.055599064, -0.17638996, 0.1998825, -0.09436178, -0.35277995, -0.6000391, -0.1886257, -0.46202037, -1, -0.1913665, -0.46202037, -1, 0.19126862, -0.35277995, -0.6000391, 0.18852782, -0.41581833, -1, 0.27770162, -0.23198903, -0.20007831, 0.19028974, -0.21221614, -0.20007831, 0.21211827, -0.19038764, -0.20007831, 0.23189116, -0.27779955, -1, 0.41572046, -0.1886257, -0.6000391, 0.35268205, -0.23570868, -1, 0.44087708, -0.1913665, -1, 0.46192247, -0.14516446, -1, 0.47846514, -0.097592026, -1, 0.4903093, -0.02946359, -0.20007831, 0.29855132, 0, -1, 0.5, 0.048942864, -1, 0.49755287, 0.097494125, -1, 0.4903093, 0.14506656, -1, 0.47846514, 0.19126862, -1, 0.46192247, 0.23561078, -1, 0.44087708, 0.27770162, -1, 0.41572046, 0.31714958, -1, 0.38645262, 0.21211827, -0.20007831, 0.21211827, 0.38645262, -1, 0.31714958, 0.41572046, -1, 0.27770162, 0.44087708, -1, 0.23561078, 0.46192247, -1, 0.19126862, 0.47846514, -1, 0.14506656, 0.4903093, -1, 0.097494125, 0.49755287, -1, 0.048942864, 0.49755287, -1, -0.049040705, 0.38645262, -1, -0.31724745, 0.35346514, -1, -0.35356304, 0.31714958, -1, -0.38655052, 0.23561078, -1, -0.44097495, 0.14506656, -1, -0.47856304, 0.048942864, -1, -0.49765074, 0, -0.6000391, -0.40005875, -0.049040705, -1, -0.49765074, -0.14516446, -1, -0.47856304, -0.23570868, -1, -0.44097495, -0.27779955, -1, -0.41581833, -0.19038764, -0.20007831, -0.23198903, -0.21221614, -0.20007831, -0.21221614, -0.23198903, -0.20007831, -0.19038764, -0.41581833, -1, -0.27779955, -0.44097495, -1, -0.23570868, -0.44097495, -1, 0.23561078, -0.38655052, -1, 0.31714958, -0.35356304, -1, 0.35346514, -0.31724745, -1, 0.38645262, -0.049040705, -1, 0.49755287, 0.35346514, -1, 0.35346514, 0, -1, -0.5, -0.31724745, -1, -0.38655052, -0.35356304, -1, -0.35356304, -0.38655052, -1, -0.31724745)
 
-[node name="Enemy" type="StaticBody3D" unique_id=1860112092 node_paths=PackedStringArray("vision_area", "eyes_position", "enemy_state_machine")]
+[node name="Enemy" type="StaticBody3D" unique_id=1860112092 node_paths=PackedStringArray("enemy_detect_component")]
 collision_layer = 2
 script = ExtResource("1_ty30k")
-vision_area = NodePath("VisionArea")
-eyes_position = NodePath("EyesMarker")
-enemy_state_machine = NodePath("StateMachine")
+enemy_detect_component = NodePath("EnemyDetectComponent")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1292463576]
 mesh = SubResource("CapsuleMesh_tblhi")
@@ -28,6 +27,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fvjn6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=779498911]
 shape = SubResource("BoxShape3D_bcves")
+
+[node name="EnemyDetectComponent" type="Node3D" parent="." unique_id=1279945926 node_paths=PackedStringArray("vision_area", "eyes_position", "enemy_state_machine", "hear_timer")]
+script = ExtResource("4_5j34h")
+vision_area = NodePath("../VisionArea")
+eyes_position = NodePath("../EyesMarker")
+enemy_state_machine = NodePath("../StateMachine")
+hear_timer = NodePath("../HearTimer")
 
 [node name="VisionArea" type="Area3D" parent="." unique_id=1268209519]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22488761, 0, 0)
@@ -46,13 +52,14 @@ shape = SubResource("ConvexPolygonShape3D_ty30k")
 [node name="EyesMarker" type="Marker3D" parent="." unique_id=544333816]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
 
-[node name="StateMachine" type="Node" parent="." unique_id=1098044964 node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=1098044964 node_paths=PackedStringArray("initial_state", "parent_node")]
 script = ExtResource("2_kfdwc")
 initial_state = NodePath("PatrolState")
+parent_node = NodePath("..")
 
 [node name="ChaseState" type="Node" parent="StateMachine" unique_id=293729258 node_paths=PackedStringArray("patrol_state", "current_state_machine")]
 script = ExtResource("3_5j34h")
-patrol_state = NodePath(".")
+patrol_state = NodePath("../PatrolState")
 current_state_machine = NodePath("..")
 
 [node name="PatrolState" type="Node" parent="StateMachine" unique_id=34782604 node_paths=PackedStringArray("chase_state", "current_state_machine")]
@@ -60,6 +67,8 @@ script = ExtResource("4_danqv")
 chase_state = NodePath("../ChaseState")
 current_state_machine = NodePath("..")
 
-[connection signal="is_player_detected" from="." to="StateMachine/ChaseState" method="_on_enemy_is_player_detected"]
-[connection signal="is_player_detected" from="." to="StateMachine/PatrolState" method="_on_enemy_is_player_detected"]
+[node name="HearTimer" type="Timer" parent="." unique_id=1448763929]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="timeout" from="VisionArea/Timer" to="." method="check_vision"]

@@ -3,6 +3,7 @@ class_name StateMachine
 
 @export_group("States Array")
 @export var initial_state : EnemyStateTemplate
+@export var parent_node : Enemy
 
 var current_state : EnemyStateTemplate
 
