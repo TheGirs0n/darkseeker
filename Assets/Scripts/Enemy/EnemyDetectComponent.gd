@@ -9,7 +9,7 @@ class_name EnemyDetectComponent
 @export var hear_timer : Timer
 
 var seen_player : bool = false
-
+var last_seen_posiion : Vector3 = Vector3.ZERO
 
 func check_hear():
 	hear_timer.start()
@@ -24,6 +24,7 @@ func check_vision() -> void:
 		
 		if player.player_detect_component.is_player_detected(eyes_position, space_state):
 			seen_player = true
+			last_seen_posiion = player.global_position
 		else:
 			seen_player = false
 
