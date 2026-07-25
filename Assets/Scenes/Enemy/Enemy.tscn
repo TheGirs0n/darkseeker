@@ -64,9 +64,10 @@ script = ExtResource("2_kfdwc")
 initial_state = NodePath("PatrolState")
 parent_node = NodePath("..")
 
-[node name="ChaseState" type="Node" parent="StateMachine" unique_id=293729258 node_paths=PackedStringArray("patrol_state", "current_state_machine")]
+[node name="ChaseState" type="Node" parent="StateMachine" unique_id=293729258 node_paths=PackedStringArray("patrol_state", "enemy_move_component", "current_state_machine")]
 script = ExtResource("3_5j34h")
 patrol_state = NodePath("../PatrolState")
+enemy_move_component = NodePath("../../EnemyMoveComponent")
 current_state_machine = NodePath("..")
 
 [node name="PatrolState" type="Node" parent="StateMachine" unique_id=34782604 node_paths=PackedStringArray("chase_state", "current_state_machine")]
