@@ -17,13 +17,13 @@ func move_to(next_position : Vector3, delta : float):
 	dir.y = 0
 	dir = dir.normalized()
 	
-	if dir.length() > 0.01:
-		enemy_body.rotation.y = atan2(-dir.z, dir.x)
-	
 	enemy_body.velocity.x = dir.x * move_speed
-	enemy_body.velocity.y = dir.y * move_speed
+	enemy_body.velocity.z = dir.z * move_speed
 	
 	if not enemy_body.is_on_floor():
 		enemy_body.velocity.y -= GRAVITY_FORCE * delta
 	
 	enemy_body.move_and_slide()
+	
+	if dir.length() > 0.01:
+		enemy_body.rotation.y = atan2(-dir.z, dir.x)
