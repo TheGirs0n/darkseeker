@@ -1,6 +1,7 @@
 extends Node3D
 class_name EnemyMoveComponent
 
+const GRAVITY_FORCE : float = 9.8
 
 @export_group("Enemy Move Parameters")
 @export var move_speed : float
@@ -8,11 +9,18 @@ class_name EnemyMoveComponent
 @export var enemy_nav_agent : NavigationAgent3D
 
 
-func move_to(next_position : Vector3):
+func move_to(next_position : Vector3, delta : float):
 	enemy_nav_agent.target_position = next_position
 	var next = enemy_nav_agent.get_next_path_position()
 	
-	var dir = (next - enemy_body.global_position).normalized()
+	var dir : Vector3 = next - enemy_body.global_position
+	dir.y = 0
+	dir = dir.normalized()
 	
-	enemy_body.velocity = dir * move_speed
+	enemy_body.velocity.x = dir.x * move_speed
+	enemy_body.velocity.z = dir.y * move_speed
+	
+	if not enemy_body.is_on_floor():
+		enemy_body.velocity.y -= GRAVITY_FORCE * delta
+	
 	enemy_body.move_and_slide()

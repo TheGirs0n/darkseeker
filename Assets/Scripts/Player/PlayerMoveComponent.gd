@@ -77,7 +77,7 @@ func get_movement():
 			noise_timer.start()
 			
 			for i in noise_area.get_overlapping_bodies():
-				i.enemy_detect_component.check_hear()
+				i.enemy_detect_component.check_hear(body_to_move.global_position)
 	else:
 		body_to_move.velocity.x = 0
 		body_to_move.velocity.z = 0

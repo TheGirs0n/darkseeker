@@ -11,8 +11,10 @@ class_name EnemyDetectComponent
 var seen_player : bool = false
 var last_seen_posiion : Vector3 = Vector3.ZERO
 
-func check_hear():
+
+func check_hear(noise_position : Vector3):
 	hear_timer.start()
+	last_seen_posiion = noise_position
 
 
 func check_vision() -> void:
