@@ -101,8 +101,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.974137, 0.25000048, 7.364
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.841184, 0, 6.390117)
 lore_entry_res = ExtResource("7_63sed")
 
-[node name="Enemy" parent="." unique_id=1860112092 instance=ExtResource("8_pgovw")]
+[node name="Enemy" parent="." unique_id=1860112092 node_paths=PackedStringArray("patrol_points") instance=ExtResource("8_pgovw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4407308, 8.104899)
+patrol_points = [NodePath("../Marker3D"), NodePath("../Marker3D4"), NodePath("../Marker3D2"), NodePath("../Marker3D3")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2019848686]
 navigation_mesh = SubResource("NavigationMesh_pgovw")
@@ -141,3 +142,15 @@ mesh = SubResource("BoxMesh_pgovw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D" unique_id=535151089]
 shape = SubResource("BoxShape3D_pgovw")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=445229035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.935909, 0.95909023, 0)
+
+[node name="Marker3D4" type="Marker3D" parent="." unique_id=1771530209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.935909, 0.95909023, 6.224736)
+
+[node name="Marker3D2" type="Marker3D" parent="." unique_id=731934062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.935909, 0.95909023, -7.714175)
+
+[node name="Marker3D3" type="Marker3D" parent="." unique_id=2062986829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7982464, 0.95909023, -7.714175)

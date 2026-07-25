@@ -27,3 +27,7 @@ func move_to(next_position : Vector3, delta : float):
 	
 	if dir.length() > 0.01:
 		enemy_body.rotation.y = atan2(-dir.z, dir.x)
+
+
+func is_arrived() -> bool:
+	return enemy_nav_agent.is_navigation_finished()
