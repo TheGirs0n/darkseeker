@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://w2nja2hi0f5h"]
+
+[ext_resource type="Script" uid="uid://c5a4aa5d8jmqu" path="res://Assets/Scripts/Environment/Noiser.gd" id="1_cs2li"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_aojqh"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qa2mj"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cs2li"]
+radius = 2.5
+
+[node name="Noiser" type="StaticBody3D" unique_id=1123672210 node_paths=PackedStringArray("noise_area", "lifetime_timer")]
+script = ExtResource("1_cs2li")
+noise_area = NodePath("Area3D")
+lifetime_timer = NodePath("Timer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=151335384]
+mesh = SubResource("BoxMesh_aojqh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1870543315]
+shape = SubResource("BoxShape3D_qa2mj")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1834881218]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=687983776]
+shape = SubResource("SphereShape3D_cs2li")
+
+[node name="Timer" type="Timer" parent="." unique_id=58294423]
+wait_time = 5.0
+one_shot = true
