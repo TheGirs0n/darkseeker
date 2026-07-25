@@ -102,7 +102,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.841184, 0, 6.390117)
 lore_entry_res = ExtResource("7_63sed")
 
 [node name="Enemy" parent="." unique_id=1860112092 instance=ExtResource("8_pgovw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4407308, 7.21747)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4407308, 8.104899)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2019848686]
 navigation_mesh = SubResource("NavigationMesh_pgovw")
