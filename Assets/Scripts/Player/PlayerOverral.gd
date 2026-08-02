@@ -12,6 +12,20 @@ class_name PlayerOverral
 @export var player_health_component : PlayerHealthComponent
 
 
+func _ready() -> void:
+	CheckpointManager.set_checkpoint(global_transform)
+
+
+func player_down() -> void:
+	CheckpointManager.respawn(self)
+
+
+func respawn_at(point : Transform3D):
+	global_transform = point
+	velocity = Vector3.ZERO
+	player_health_component.restore()
+
+
 func set_controls_enable():
 	for component in player_component_list:
 		component.set_process_enable()

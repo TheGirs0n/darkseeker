@@ -8,3 +8,7 @@ class_name Enemy
 
 @export_group("Patrol")
 @export var patrol_points : Array[Marker3D]
+
+
+func forget_player():
+	enemy_detect_component.forget_player()

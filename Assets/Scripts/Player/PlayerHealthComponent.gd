@@ -5,20 +5,27 @@ class_name PlayerHealthComponent
 @export var max_health : int = 5
 
 
-signal player_get_damage(player_health : int)
+signal health_changed(current_health : int, max_health : int)
+signal health_zero
 
-
-var player_current_health : int
+var current_health : int
 
 
 func _ready() -> void:
-	player_current_health = max_health
+	current_health = max_health
 
 
-func player_take_damage(damage_amount : int):
-	player_current_health = clampi(player_current_health - damage_amount, 0, max_health)
-	
-	if player_current_health <= 0:
-		pass
+func take_damage(damage_amount : int):
+	if current_health <= 0:
+		return 
 		
-	player_get_damage.emit(player_current_health)
+	current_health = clampi(current_health - damage_amount, 0, max_health)
+	health_changed.emit(current_health, max_health)
+	
+	if current_health <= 0:
+		health_zero.emit()
+		
+
+func restore():
+	current_health = max_health
+	health_changed.emit(current_health, max_health)

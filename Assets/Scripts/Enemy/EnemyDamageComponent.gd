@@ -12,7 +12,7 @@ var player : PlayerOverral
 
 
 func _on_damage_timer_timeout() -> void:
-	player.player_health_component.player_take_damage(damage_amount)
+	player.player_health_component.take_damage(damage_amount)
 
 
 func player_enter(body: Node3D) -> void:

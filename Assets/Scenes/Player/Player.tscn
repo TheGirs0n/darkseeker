@@ -122,3 +122,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0)
 
 [node name="Marker3D5" type="Marker3D" parent="Node3D" unique_id=1482654339]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
+
+[connection signal="health_zero" from="PlayerHealthComponent" to="." method="player_down"]

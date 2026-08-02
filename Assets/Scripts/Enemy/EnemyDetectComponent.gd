@@ -33,3 +33,9 @@ func check_vision() -> void:
 
 func check_player_detect() -> bool:
 	return seen_player or not hear_timer.is_stopped()
+
+
+func forget_player():
+	seen_player = false
+	hear_timer.stop()
+	last_seen_posiion = Vector3.ZERO

@@ -1,13 +1,16 @@
 extends Node
 
-var start_checkpoint : Node3D
-var current_checkpoint : Node3D
+var _respawn_point : Transform3D
+var _has_point : bool = false
 
-
-func _ready() -> void:
-	current_checkpoint = start_checkpoint
-
-
-func set_player_new_checkpoint(new_checkpoint : Node3D):
-	current_checkpoint = new_checkpoint
+func set_checkpoint(point : Transform3D):
+	_respawn_point = point
+	_has_point = true
 	
+	
+func respawn(player : PlayerOverral):
+	if not _has_point:
+		return
+		
+	player.respawn_at(_respawn_point)
+	get_tree().call_group("enemy", "forget_player")
