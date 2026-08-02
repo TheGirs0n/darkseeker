@@ -34,3 +34,5 @@ shape = SubResource("SphereShape3D_cs2li")
 [node name="Timer" type="Timer" parent="." unique_id=58294423]
 wait_time = 5.0
 one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="timer_timeout"]

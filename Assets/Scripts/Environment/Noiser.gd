@@ -23,5 +23,5 @@ func _physics_process(delta: float) -> void:
 		body.enemy_detect_component.check_hear(global_position)
 		
 		
-func timer_timerout():
+func timer_timeout():
 	is_active = false
