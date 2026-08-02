@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bu1k7eqfqdhyj" path="res://Assets/Scripts/Enemy/EnemyDetectComponent.gd" id="4_5j34h"]
 [ext_resource type="Script" uid="uid://clhnm71yvrc5i" path="res://Assets/Scripts/Enemy/EnemyStateMachine/PatrolState.gd" id="4_danqv"]
 [ext_resource type="Script" uid="uid://daj586i0hpkud" path="res://Assets/Scripts/Enemy/EnemyMoveComponent.gd" id="6_8pnc4"]
+[ext_resource type="Script" uid="uid://ctphcuypibpwk" path="res://Assets/Scripts/Enemy/EnemyDamageComponent.gd" id="7_upsik"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tblhi"]
 
@@ -16,6 +17,9 @@ albedo_color = Color(0.64278483, 0.5239962, 0.25360575, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ty30k"]
 points = PackedVector3Array(-0.5, -1, 0, -0.49765074, -1, -0.049040705, -0.49765074, -1, 0.048942864, -0.40005875, -0.6000391, 0, -0.2986492, -0.20007831, -0.02946359, -0.4904072, -1, -0.097592026, -0.4904072, -1, 0.097494125, -0.2986492, -0.20007831, 0.029365718, -0.20007831, 0.1998825, 0, 0, 1, 0, -0.47856304, -1, -0.14516446, -0.19146436, 0.1998825, -0.058144093, -0.47856304, -1, 0.14506656, -0.19146436, 0.1998825, 0.05804622, 0.5, -1, 0, 0.29855132, -0.20007831, -0.02946359, 0.4903093, -1, -0.097592026, 0.47846514, -1, -0.14516446, 0.46192247, -1, -0.1913665, 0.44087708, -1, -0.23570868, 0.35268205, -0.6000391, -0.1886257, 0.41572046, -1, -0.27779955, 0.23189116, -0.20007831, -0.19038764, 0.21211827, -0.20007831, -0.21221614, 0.19028974, -0.20007831, -0.23198903, 0.27770162, -1, -0.41581833, 0.18852782, -0.6000391, -0.35277995, 0.19126862, -1, -0.46202037, 0.05804622, 0.1998825, -0.19146436, 0.097494125, -1, -0.4904072, 0.029365718, -0.20007831, -0.2986492, 0, 0.1998825, -0.20007831, -0.02946359, -0.20007831, -0.2986492, -0.097592026, -1, -0.4904072, -0.058144093, 0.1998825, -0.19146436, -0.1913665, -1, -0.46202037, -0.1886257, -0.6000391, -0.35277995, -0.09436178, 0.1998825, -0.17638996, -0.055599064, 0.5998434, -0.08320281, -0.06352779, 0.5998434, -0.077329665, -0.07077134, 0.5998434, -0.07077134, -0.077329665, 0.5998434, -0.06352779, -0.08320281, 0.5998434, -0.055599064, -0.17638996, 0.1998825, -0.09436178, -0.35277995, -0.6000391, -0.1886257, -0.46202037, -1, -0.1913665, -0.46202037, -1, 0.19126862, -0.35277995, -0.6000391, 0.18852782, -0.41581833, -1, 0.27770162, -0.23198903, -0.20007831, 0.19028974, -0.21221614, -0.20007831, 0.21211827, -0.19038764, -0.20007831, 0.23189116, -0.27779955, -1, 0.41572046, -0.1886257, -0.6000391, 0.35268205, -0.23570868, -1, 0.44087708, -0.1913665, -1, 0.46192247, -0.14516446, -1, 0.47846514, -0.097592026, -1, 0.4903093, -0.02946359, -0.20007831, 0.29855132, 0, -1, 0.5, 0.048942864, -1, 0.49755287, 0.097494125, -1, 0.4903093, 0.14506656, -1, 0.47846514, 0.19126862, -1, 0.46192247, 0.23561078, -1, 0.44087708, 0.27770162, -1, 0.41572046, 0.31714958, -1, 0.38645262, 0.21211827, -0.20007831, 0.21211827, 0.38645262, -1, 0.31714958, 0.41572046, -1, 0.27770162, 0.44087708, -1, 0.23561078, 0.46192247, -1, 0.19126862, 0.47846514, -1, 0.14506656, 0.4903093, -1, 0.097494125, 0.49755287, -1, 0.048942864, 0.49755287, -1, -0.049040705, 0.38645262, -1, -0.31724745, 0.35346514, -1, -0.35356304, 0.31714958, -1, -0.38655052, 0.23561078, -1, -0.44097495, 0.14506656, -1, -0.47856304, 0.048942864, -1, -0.49765074, 0, -0.6000391, -0.40005875, -0.049040705, -1, -0.49765074, -0.14516446, -1, -0.47856304, -0.23570868, -1, -0.44097495, -0.27779955, -1, -0.41581833, -0.19038764, -0.20007831, -0.23198903, -0.21221614, -0.20007831, -0.21221614, -0.23198903, -0.20007831, -0.19038764, -0.41581833, -1, -0.27779955, -0.44097495, -1, -0.23570868, -0.44097495, -1, 0.23561078, -0.38655052, -1, 0.31714958, -0.35356304, -1, 0.35346514, -0.31724745, -1, 0.38645262, -0.049040705, -1, 0.49755287, 0.35346514, -1, 0.35346514, 0, -1, -0.5, -0.31724745, -1, -0.38655052, -0.35356304, -1, -0.35356304, -0.38655052, -1, -0.31724745)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_upsik"]
+radius = 1.5
 
 [node name="Enemy" type="CharacterBody3D" unique_id=1983198529 node_paths=PackedStringArray("enemy_detect_component", "enemy_move_component")]
 collision_layer = 2
@@ -82,4 +86,22 @@ one_shot = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1809957044]
 
+[node name="EnemyDamageComponent" type="Node3D" parent="." unique_id=1957562941 node_paths=PackedStringArray("visible_area", "damage_timer")]
+script = ExtResource("7_upsik")
+visible_area = NodePath("DamageArea3D")
+damage_timer = NodePath("DamageTimer")
+
+[node name="DamageArea3D" type="Area3D" parent="EnemyDamageComponent" unique_id=1005613033]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyDamageComponent/DamageArea3D" unique_id=1330300116]
+shape = SubResource("SphereShape3D_upsik")
+
+[node name="DamageTimer" type="Timer" parent="EnemyDamageComponent" unique_id=1522514778]
+wait_time = 0.75
+
 [connection signal="timeout" from="VisionArea/Timer" to="EnemyDetectComponent" method="check_vision"]
+[connection signal="body_entered" from="EnemyDamageComponent/DamageArea3D" to="EnemyDamageComponent" method="player_enter"]
+[connection signal="body_exited" from="EnemyDamageComponent/DamageArea3D" to="EnemyDamageComponent" method="player_exit"]
+[connection signal="timeout" from="EnemyDamageComponent/DamageTimer" to="EnemyDamageComponent" method="_on_damage_timer_timeout"]

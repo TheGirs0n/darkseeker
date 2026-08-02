@@ -9,6 +9,7 @@ class_name PlayerOverral
 @export var player_flashlight_component : PlayerFlashlightComponent
 @export var player_camera_look : PlayerCameraFreeLook
 @export var player_detect_component : PlayerDetectComponent
+@export var player_health_component : PlayerHealthComponent
 
 
 func set_controls_enable():
