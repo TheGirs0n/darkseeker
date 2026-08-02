@@ -16,8 +16,8 @@ func _on_damage_timer_timeout() -> void:
 
 
 func player_enter(body: Node3D) -> void:
-	body = player as PlayerOverral
-	damage_timer.play()
+	player = body as PlayerOverral
+	damage_timer.start()
 	
 
 func player_exit(body: Node3D) -> void:
