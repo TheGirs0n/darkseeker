@@ -34,6 +34,10 @@ folder_colors={
 "res://Assets/Translation/": "purple"
 }
 
+[global_group]
+
+enemy=""
+
 [gui]
 
 theme/custom="uid://dqd42opc14hbl"

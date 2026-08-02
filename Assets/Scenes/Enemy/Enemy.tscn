@@ -21,7 +21,7 @@ points = PackedVector3Array(-0.5, -1, 0, -0.49765074, -1, -0.049040705, -0.49765
 [sub_resource type="SphereShape3D" id="SphereShape3D_upsik"]
 radius = 1.5
 
-[node name="Enemy" type="CharacterBody3D" unique_id=1983198529 node_paths=PackedStringArray("enemy_detect_component", "enemy_move_component")]
+[node name="Enemy" type="CharacterBody3D" unique_id=1983198529 node_paths=PackedStringArray("enemy_detect_component", "enemy_move_component") groups=["enemy"]]
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_ty30k")
