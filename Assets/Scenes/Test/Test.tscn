@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://1crvvcjlipuq" path="res://Assets/Scenes/Environment/LoreEntry/LoreEntry.tscn" id="6_kc6t1"]
 [ext_resource type="Resource" uid="uid://16bu23jsjymh" path="res://Assets/Resources/LoreNotes/Test.tres" id="7_63sed"]
 [ext_resource type="PackedScene" uid="uid://ri7daa6qdk7y" path="res://Assets/Scenes/Enemy/Enemy.tscn" id="8_pgovw"]
+[ext_resource type="PackedScene" uid="uid://w2nja2hi0f5h" path="res://Assets/Scenes/Environment/Noiser.tscn" id="9_sgxk3"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_n7f0m"]
 
@@ -154,3 +155,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.935909, 0.95909023, -7.714
 
 [node name="Marker3D3" type="Marker3D" parent="." unique_id=2062986829]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7982464, 0.95909023, -7.714175)
+
+[node name="Noiser" parent="." unique_id=1123672210 instance=ExtResource("9_sgxk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6960373, 0.1, -1.0432467)

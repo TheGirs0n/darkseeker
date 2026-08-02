@@ -8,6 +8,9 @@ var is_active : bool = false
 
 
 func interact(interactor : CharacterBody3D):
+	if is_active:
+		return
+	
 	is_active = true
 	lifetime_timer.start()
 	

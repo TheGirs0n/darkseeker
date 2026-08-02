@@ -9,9 +9,11 @@ size = Vector3(0.2, 0.2, 0.2)
 size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cs2li"]
-radius = 2.5
+radius = 10.0
 
 [node name="Noiser" type="StaticBody3D" unique_id=1123672210 node_paths=PackedStringArray("noise_area", "lifetime_timer")]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_cs2li")
 noise_area = NodePath("Area3D")
 lifetime_timer = NodePath("Timer")
